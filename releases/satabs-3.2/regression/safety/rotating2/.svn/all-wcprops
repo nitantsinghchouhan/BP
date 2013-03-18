@@ -1,0 +1,17 @@
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/svn/satabs/!svn/ver/310/releases/satabs-3.2/regression/safety/rotating2
+END
+test.desc
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/svn/satabs/!svn/ver/310/releases/satabs-3.2/regression/safety/rotating2/test.desc
+END
+rotating_simple.c
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/svn/satabs/!svn/ver/310/releases/satabs-3.2/regression/safety/rotating2/rotating_simple.c
+END

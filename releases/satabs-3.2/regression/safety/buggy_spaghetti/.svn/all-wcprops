@@ -1,0 +1,17 @@
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/svn/satabs/!svn/ver/310/releases/satabs-3.2/regression/safety/buggy_spaghetti
+END
+spaghetti.c
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/svn/satabs/!svn/ver/310/releases/satabs-3.2/regression/safety/buggy_spaghetti/spaghetti.c
+END
+test.desc
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/svn/satabs/!svn/ver/310/releases/satabs-3.2/regression/safety/buggy_spaghetti/test.desc
+END

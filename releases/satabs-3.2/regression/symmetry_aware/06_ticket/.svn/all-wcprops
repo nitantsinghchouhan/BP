@@ -1,0 +1,17 @@
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/svn/satabs/!svn/ver/310/releases/satabs-3.2/regression/symmetry_aware/06_ticket
+END
+test.desc
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/svn/satabs/!svn/ver/310/releases/satabs-3.2/regression/symmetry_aware/06_ticket/test.desc
+END
+main.c
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/svn/satabs/!svn/ver/310/releases/satabs-3.2/regression/symmetry_aware/06_ticket/main.c
+END

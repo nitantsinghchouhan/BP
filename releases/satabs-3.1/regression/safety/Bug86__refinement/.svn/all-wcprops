@@ -1,0 +1,17 @@
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/svn/satabs/!svn/ver/194/releases/satabs-3.1/regression/safety/Bug86__refinement
+END
+main.c
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/svn/satabs/!svn/ver/194/releases/satabs-3.1/regression/safety/Bug86__refinement/main.c
+END
+test.desc
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/svn/satabs/!svn/ver/194/releases/satabs-3.1/regression/safety/Bug86__refinement/test.desc
+END

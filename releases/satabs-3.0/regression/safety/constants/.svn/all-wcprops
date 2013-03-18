@@ -1,0 +1,17 @@
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/svn/satabs/!svn/ver/44/releases/satabs-3.0/regression/safety/constants
+END
+test.desc
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/svn/satabs/!svn/ver/44/releases/satabs-3.0/regression/safety/constants/test.desc
+END
+constants.c
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/svn/satabs/!svn/ver/44/releases/satabs-3.0/regression/safety/constants/constants.c
+END

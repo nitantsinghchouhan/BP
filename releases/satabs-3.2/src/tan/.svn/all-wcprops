@@ -1,0 +1,47 @@
+K 25
+svn:wc:ra_dav:version-url
+V 52
+/svn/satabs/!svn/ver/310/releases/satabs-3.2/src/tan
+END
+languages.h
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/svn/satabs/!svn/ver/310/releases/satabs-3.2/src/tan/languages.h
+END
+parseoptions.h
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/svn/satabs/!svn/ver/310/releases/satabs-3.2/src/tan/parseoptions.h
+END
+Makefile
+K 25
+svn:wc:ra_dav:version-url
+V 61
+/svn/satabs/!svn/ver/310/releases/satabs-3.2/src/tan/Makefile
+END
+main.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 61
+/svn/satabs/!svn/ver/310/releases/satabs-3.2/src/tan/main.cpp
+END
+languages.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/svn/satabs/!svn/ver/310/releases/satabs-3.2/src/tan/languages.cpp
+END
+parseoptions.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/svn/satabs/!svn/ver/310/releases/satabs-3.2/src/tan/parseoptions.cpp
+END
+version.h
+K 25
+svn:wc:ra_dav:version-url
+V 62
+/svn/satabs/!svn/ver/310/releases/satabs-3.2/src/tan/version.h
+END

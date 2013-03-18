@@ -1,0 +1,29 @@
+K 25
+svn:wc:ra_dav:version-url
+V 115
+/svn/satabs/!svn/ver/310/releases/satabs-3.2/regression/symmetry_aware_bugzilla/Bug56__remove_address_of_predicates
+END
+basics.c
+K 25
+svn:wc:ra_dav:version-url
+V 124
+/svn/satabs/!svn/ver/310/releases/satabs-3.2/regression/symmetry_aware_bugzilla/Bug56__remove_address_of_predicates/basics.c
+END
+TickeLock.c
+K 25
+svn:wc:ra_dav:version-url
+V 127
+/svn/satabs/!svn/ver/310/releases/satabs-3.2/regression/symmetry_aware_bugzilla/Bug56__remove_address_of_predicates/TickeLock.c
+END
+basics.h
+K 25
+svn:wc:ra_dav:version-url
+V 124
+/svn/satabs/!svn/ver/310/releases/satabs-3.2/regression/symmetry_aware_bugzilla/Bug56__remove_address_of_predicates/basics.h
+END
+test.desc
+K 25
+svn:wc:ra_dav:version-url
+V 125
+/svn/satabs/!svn/ver/310/releases/satabs-3.2/regression/symmetry_aware_bugzilla/Bug56__remove_address_of_predicates/test.desc
+END

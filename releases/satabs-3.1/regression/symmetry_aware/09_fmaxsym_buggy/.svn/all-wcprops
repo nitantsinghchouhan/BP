@@ -1,0 +1,17 @@
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/svn/satabs/!svn/ver/194/releases/satabs-3.1/regression/symmetry_aware/09_fmaxsym_buggy
+END
+test.desc
+K 25
+svn:wc:ra_dav:version-url
+V 97
+/svn/satabs/!svn/ver/194/releases/satabs-3.1/regression/symmetry_aware/09_fmaxsym_buggy/test.desc
+END
+main.c
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/svn/satabs/!svn/ver/194/releases/satabs-3.1/regression/symmetry_aware/09_fmaxsym_buggy/main.c
+END

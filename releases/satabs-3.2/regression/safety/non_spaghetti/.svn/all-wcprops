@@ -1,0 +1,17 @@
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/svn/satabs/!svn/ver/310/releases/satabs-3.2/regression/safety/non_spaghetti
+END
+test.desc
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/svn/satabs/!svn/ver/310/releases/satabs-3.2/regression/safety/non_spaghetti/test.desc
+END
+non_spaghetti.c
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/svn/satabs/!svn/ver/310/releases/satabs-3.2/regression/safety/non_spaghetti/non_spaghetti.c
+END

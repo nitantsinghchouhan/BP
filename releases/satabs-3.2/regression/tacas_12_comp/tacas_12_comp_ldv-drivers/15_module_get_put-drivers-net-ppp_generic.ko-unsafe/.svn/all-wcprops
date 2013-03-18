@@ -1,0 +1,17 @@
+K 25
+svn:wc:ra_dav:version-url
+V 147
+/svn/satabs/!svn/ver/310/releases/satabs-3.2/regression/tacas_12_comp/tacas_12_comp_ldv-drivers/15_module_get_put-drivers-net-ppp_generic.ko-unsafe
+END
+test.desc
+K 25
+svn:wc:ra_dav:version-url
+V 157
+/svn/satabs/!svn/ver/310/releases/satabs-3.2/regression/tacas_12_comp/tacas_12_comp_ldv-drivers/15_module_get_put-drivers-net-ppp_generic.ko-unsafe/test.desc
+END
+main.c
+K 25
+svn:wc:ra_dav:version-url
+V 154
+/svn/satabs/!svn/ver/310/releases/satabs-3.2/regression/tacas_12_comp/tacas_12_comp_ldv-drivers/15_module_get_put-drivers-net-ppp_generic.ko-unsafe/main.c
+END

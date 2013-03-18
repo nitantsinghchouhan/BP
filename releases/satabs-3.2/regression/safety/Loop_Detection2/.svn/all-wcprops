@@ -1,0 +1,17 @@
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/svn/satabs/!svn/ver/310/releases/satabs-3.2/regression/safety/Loop_Detection2
+END
+main.c
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/svn/satabs/!svn/ver/310/releases/satabs-3.2/regression/safety/Loop_Detection2/main.c
+END
+test.desc
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/svn/satabs/!svn/ver/310/releases/satabs-3.2/regression/safety/Loop_Detection2/test.desc
+END

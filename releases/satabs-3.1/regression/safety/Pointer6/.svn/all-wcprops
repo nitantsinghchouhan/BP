@@ -1,0 +1,17 @@
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/svn/satabs/!svn/ver/194/releases/satabs-3.1/regression/safety/Pointer6
+END
+test.desc
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/svn/satabs/!svn/ver/194/releases/satabs-3.1/regression/safety/Pointer6/test.desc
+END
+main.c
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/svn/satabs/!svn/ver/194/releases/satabs-3.1/regression/safety/Pointer6/main.c
+END

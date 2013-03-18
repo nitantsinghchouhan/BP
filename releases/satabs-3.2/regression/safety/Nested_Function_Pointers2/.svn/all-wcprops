@@ -1,0 +1,17 @@
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/svn/satabs/!svn/ver/310/releases/satabs-3.2/regression/safety/Nested_Function_Pointers2
+END
+main.c
+K 25
+svn:wc:ra_dav:version-url
+V 95
+/svn/satabs/!svn/ver/310/releases/satabs-3.2/regression/safety/Nested_Function_Pointers2/main.c
+END
+test.desc
+K 25
+svn:wc:ra_dav:version-url
+V 98
+/svn/satabs/!svn/ver/310/releases/satabs-3.2/regression/safety/Nested_Function_Pointers2/test.desc
+END

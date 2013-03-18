@@ -1,0 +1,281 @@
+K 25
+svn:wc:ra_dav:version-url
+V 54
+/svn/satabs/!svn/ver/310/releases/satabs-3.2/src/boppo
+END
+program_formula.h
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/svn/satabs/!svn/ver/310/releases/satabs-3.2/src/boppo/program_formula.h
+END
+synchronization.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/svn/satabs/!svn/ver/310/releases/satabs-3.2/src/boppo/synchronization.cpp
+END
+partial_order_reduction.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/svn/satabs/!svn/ver/310/releases/satabs-3.2/src/boppo/partial_order_reduction.cpp
+END
+trace.h
+K 25
+svn:wc:ra_dav:version-url
+V 62
+/svn/satabs/!svn/ver/310/releases/satabs-3.2/src/boppo/trace.h
+END
+simulator_ct.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/svn/satabs/!svn/ver/310/releases/satabs-3.2/src/boppo/simulator_ct.cpp
+END
+convert_to_promela.h
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/svn/satabs/!svn/ver/310/releases/satabs-3.2/src/boppo/convert_to_promela.h
+END
+history.h
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/svn/satabs/!svn/ver/310/releases/satabs-3.2/src/boppo/history.h
+END
+loop_detection.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/svn/satabs/!svn/ver/310/releases/satabs-3.2/src/boppo/loop_detection.cpp
+END
+simulator_base.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/svn/satabs/!svn/ver/310/releases/satabs-3.2/src/boppo/simulator_base.cpp
+END
+compare_states.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/svn/satabs/!svn/ver/310/releases/satabs-3.2/src/boppo/compare_states.cpp
+END
+formula.h
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/svn/satabs/!svn/ver/310/releases/satabs-3.2/src/boppo/formula.h
+END
+state_projection.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/svn/satabs/!svn/ver/310/releases/satabs-3.2/src/boppo/state_projection.cpp
+END
+simulator.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/svn/satabs/!svn/ver/310/releases/satabs-3.2/src/boppo/simulator.cpp
+END
+slam_trace.h
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/svn/satabs/!svn/ver/310/releases/satabs-3.2/src/boppo/slam_trace.h
+END
+state.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/svn/satabs/!svn/ver/310/releases/satabs-3.2/src/boppo/state.cpp
+END
+dump_trace.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/svn/satabs/!svn/ver/310/releases/satabs-3.2/src/boppo/dump_trace.cpp
+END
+statistics.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/svn/satabs/!svn/ver/310/releases/satabs-3.2/src/boppo/statistics.cpp
+END
+parseoptions.h
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/svn/satabs/!svn/ver/310/releases/satabs-3.2/src/boppo/parseoptions.h
+END
+program_formula.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/svn/satabs/!svn/ver/310/releases/satabs-3.2/src/boppo/program_formula.cpp
+END
+qbf_cache.h
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/svn/satabs/!svn/ver/310/releases/satabs-3.2/src/boppo/qbf_cache.h
+END
+history.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/svn/satabs/!svn/ver/310/releases/satabs-3.2/src/boppo/history.cpp
+END
+convert_to_promela.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/svn/satabs/!svn/ver/310/releases/satabs-3.2/src/boppo/convert_to_promela.cpp
+END
+partial_order_sat.h
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/svn/satabs/!svn/ver/310/releases/satabs-3.2/src/boppo/partial_order_sat.h
+END
+convert_to_program_formula.h
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/svn/satabs/!svn/ver/310/releases/satabs-3.2/src/boppo/convert_to_program_formula.h
+END
+formula.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/svn/satabs/!svn/ver/310/releases/satabs-3.2/src/boppo/formula.cpp
+END
+simulator_ct_queue.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/svn/satabs/!svn/ver/310/releases/satabs-3.2/src/boppo/simulator_ct_queue.cpp
+END
+simulator_ct.h
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/svn/satabs/!svn/ver/310/releases/satabs-3.2/src/boppo/simulator_ct.h
+END
+slam_trace.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/svn/satabs/!svn/ver/310/releases/satabs-3.2/src/boppo/slam_trace.cpp
+END
+solver.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/svn/satabs/!svn/ver/310/releases/satabs-3.2/src/boppo/solver.cpp
+END
+simulator_base.h
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/svn/satabs/!svn/ver/310/releases/satabs-3.2/src/boppo/simulator_base.h
+END
+compare_states.h
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/svn/satabs/!svn/ver/310/releases/satabs-3.2/src/boppo/compare_states.h
+END
+execute_thread_ct.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/svn/satabs/!svn/ver/310/releases/satabs-3.2/src/boppo/execute_thread_ct.cpp
+END
+state_projection.h
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/svn/satabs/!svn/ver/310/releases/satabs-3.2/src/boppo/state_projection.h
+END
+main.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 63
+/svn/satabs/!svn/ver/310/releases/satabs-3.2/src/boppo/main.cpp
+END
+simulator.h
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/svn/satabs/!svn/ver/310/releases/satabs-3.2/src/boppo/simulator.h
+END
+state.h
+K 25
+svn:wc:ra_dav:version-url
+V 62
+/svn/satabs/!svn/ver/310/releases/satabs-3.2/src/boppo/state.h
+END
+parseoptions.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/svn/satabs/!svn/ver/310/releases/satabs-3.2/src/boppo/parseoptions.cpp
+END
+execute_thread.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/svn/satabs/!svn/ver/310/releases/satabs-3.2/src/boppo/execute_thread.cpp
+END
+queue.h
+K 25
+svn:wc:ra_dav:version-url
+V 62
+/svn/satabs/!svn/ver/310/releases/satabs-3.2/src/boppo/queue.h
+END
+recurrence_check.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/svn/satabs/!svn/ver/310/releases/satabs-3.2/src/boppo/recurrence_check.cpp
+END
+compute_trace.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/svn/satabs/!svn/ver/310/releases/satabs-3.2/src/boppo/compute_trace.cpp
+END
+version.h
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/svn/satabs/!svn/ver/310/releases/satabs-3.2/src/boppo/version.h
+END
+qbf_cache.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/svn/satabs/!svn/ver/310/releases/satabs-3.2/src/boppo/qbf_cache.cpp
+END
+Makefile
+K 25
+svn:wc:ra_dav:version-url
+V 63
+/svn/satabs/!svn/ver/310/releases/satabs-3.2/src/boppo/Makefile
+END
+convert_to_program_formula.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/svn/satabs/!svn/ver/310/releases/satabs-3.2/src/boppo/convert_to_program_formula.cpp
+END
+partial_order_sat.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/svn/satabs/!svn/ver/310/releases/satabs-3.2/src/boppo/partial_order_sat.cpp
+END

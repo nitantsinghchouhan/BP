@@ -1,0 +1,17 @@
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/svn/satabs/!svn/ver/310/releases/satabs-3.2/regression/safety/Bug58__array_in_struct
+END
+main.c
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/svn/satabs/!svn/ver/310/releases/satabs-3.2/regression/safety/Bug58__array_in_struct/main.c
+END
+test.desc
+K 25
+svn:wc:ra_dav:version-url
+V 95
+/svn/satabs/!svn/ver/310/releases/satabs-3.2/regression/safety/Bug58__array_in_struct/test.desc
+END

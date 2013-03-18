@@ -1,0 +1,17 @@
+K 25
+svn:wc:ra_dav:version-url
+V 99
+/svn/satabs/!svn/ver/310/releases/satabs-3.2/regression/safety/Bug75__overapproximating_abstraction
+END
+test.desc
+K 25
+svn:wc:ra_dav:version-url
+V 109
+/svn/satabs/!svn/ver/310/releases/satabs-3.2/regression/safety/Bug75__overapproximating_abstraction/test.desc
+END
+main.c
+K 25
+svn:wc:ra_dav:version-url
+V 106
+/svn/satabs/!svn/ver/310/releases/satabs-3.2/regression/safety/Bug75__overapproximating_abstraction/main.c
+END

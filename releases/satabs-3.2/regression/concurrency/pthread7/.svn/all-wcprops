@@ -1,0 +1,17 @@
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/svn/satabs/!svn/ver/310/releases/satabs-3.2/regression/concurrency/pthread7
+END
+main.c
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/svn/satabs/!svn/ver/310/releases/satabs-3.2/regression/concurrency/pthread7/main.c
+END
+test.desc
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/svn/satabs/!svn/ver/310/releases/satabs-3.2/regression/concurrency/pthread7/test.desc
+END

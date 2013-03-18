@@ -1,0 +1,17 @@
+K 25
+svn:wc:ra_dav:version-url
+V 98
+/svn/satabs/!svn/ver/310/releases/satabs-3.2/regression/symmetry_aware_cav12threader/12_qrcu_4proc
+END
+main.c
+K 25
+svn:wc:ra_dav:version-url
+V 105
+/svn/satabs/!svn/ver/310/releases/satabs-3.2/regression/symmetry_aware_cav12threader/12_qrcu_4proc/main.c
+END
+test.desc
+K 25
+svn:wc:ra_dav:version-url
+V 108
+/svn/satabs/!svn/ver/310/releases/satabs-3.2/regression/symmetry_aware_cav12threader/12_qrcu_4proc/test.desc
+END

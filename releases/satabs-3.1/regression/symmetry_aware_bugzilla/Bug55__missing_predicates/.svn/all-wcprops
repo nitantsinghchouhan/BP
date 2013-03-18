@@ -1,0 +1,29 @@
+K 25
+svn:wc:ra_dav:version-url
+V 105
+/svn/satabs/!svn/ver/194/releases/satabs-3.1/regression/symmetry_aware_bugzilla/Bug55__missing_predicates
+END
+basics.c
+K 25
+svn:wc:ra_dav:version-url
+V 114
+/svn/satabs/!svn/ver/194/releases/satabs-3.1/regression/symmetry_aware_bugzilla/Bug55__missing_predicates/basics.c
+END
+TickeLock.c
+K 25
+svn:wc:ra_dav:version-url
+V 117
+/svn/satabs/!svn/ver/194/releases/satabs-3.1/regression/symmetry_aware_bugzilla/Bug55__missing_predicates/TickeLock.c
+END
+basics.h
+K 25
+svn:wc:ra_dav:version-url
+V 114
+/svn/satabs/!svn/ver/194/releases/satabs-3.1/regression/symmetry_aware_bugzilla/Bug55__missing_predicates/basics.h
+END
+test.desc
+K 25
+svn:wc:ra_dav:version-url
+V 115
+/svn/satabs/!svn/ver/194/releases/satabs-3.1/regression/symmetry_aware_bugzilla/Bug55__missing_predicates/test.desc
+END

@@ -1,0 +1,17 @@
+K 25
+svn:wc:ra_dav:version-url
+V 102
+/svn/satabs/!svn/ver/310/releases/satabs-3.2/regression/symmetry_aware_cav12threader/06_time_var_mutex
+END
+main.c
+K 25
+svn:wc:ra_dav:version-url
+V 109
+/svn/satabs/!svn/ver/310/releases/satabs-3.2/regression/symmetry_aware_cav12threader/06_time_var_mutex/main.c
+END
+test.desc
+K 25
+svn:wc:ra_dav:version-url
+V 112
+/svn/satabs/!svn/ver/310/releases/satabs-3.2/regression/symmetry_aware_cav12threader/06_time_var_mutex/test.desc
+END

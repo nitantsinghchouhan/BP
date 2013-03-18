@@ -1,0 +1,101 @@
+10
+
+dir
+342
+http://www.cprover.org/svn/satabs/releases/satabs-3.2/regression/tacas_12_comp/tacas_12_comp_locks
+http://www.cprover.org/svn/satabs
+
+
+
+2013-01-14T11:01:09.555491Z
+296
+kroening
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+c82bf971-7879-4458-aa57-88e1f0fec4b8
+
+Makefile
+file
+
+
+
+
+2013-03-18T15:49:27.319629Z
+6403d453ac7c251b0ed162b4f82b22ab
+2013-01-14T11:01:09.555491Z
+296
+kroening
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+217
+
+01_test_locks_5
+dir
+
+10_test_locks_14
+dir
+
+13_test_locks_15.BUG
+dir
+
+06_test_locks_10
+dir
+
+02_test_locks_6
+dir
+
+07_test_locks_11
+dir
+
+12_test_locks_15
+dir
+
+03_test_locks_7
+dir
+
+08_test_locks_12
+dir
+
+04_test_locks_8
+dir
+
+09_test_locks_13
+dir
+
+05_test_locks_9
+dir
+
+11_test_locks_14.BUG
+dir
+

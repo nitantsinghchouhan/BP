@@ -1,0 +1,17 @@
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/svn/satabs/!svn/ver/310/releases/satabs-3.2/regression/safety/Bug64__conditionals
+END
+test.desc
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/svn/satabs/!svn/ver/310/releases/satabs-3.2/regression/safety/Bug64__conditionals/test.desc
+END
+main.c
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/svn/satabs/!svn/ver/310/releases/satabs-3.2/regression/safety/Bug64__conditionals/main.c
+END

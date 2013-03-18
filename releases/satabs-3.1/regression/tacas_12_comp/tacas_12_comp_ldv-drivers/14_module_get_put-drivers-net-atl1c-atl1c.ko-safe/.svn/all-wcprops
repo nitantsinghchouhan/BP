@@ -1,0 +1,17 @@
+K 25
+svn:wc:ra_dav:version-url
+V 145
+/svn/satabs/!svn/ver/194/releases/satabs-3.1/regression/tacas_12_comp/tacas_12_comp_ldv-drivers/14_module_get_put-drivers-net-atl1c-atl1c.ko-safe
+END
+test.desc
+K 25
+svn:wc:ra_dav:version-url
+V 155
+/svn/satabs/!svn/ver/194/releases/satabs-3.1/regression/tacas_12_comp/tacas_12_comp_ldv-drivers/14_module_get_put-drivers-net-atl1c-atl1c.ko-safe/test.desc
+END
+main.c
+K 25
+svn:wc:ra_dav:version-url
+V 152
+/svn/satabs/!svn/ver/194/releases/satabs-3.1/regression/tacas_12_comp/tacas_12_comp_ldv-drivers/14_module_get_put-drivers-net-atl1c-atl1c.ko-safe/main.c
+END

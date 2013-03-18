@@ -1,0 +1,17 @@
+K 25
+svn:wc:ra_dav:version-url
+V 105
+/svn/satabs/!svn/ver/310/releases/satabs-3.2/regression/tacas_12_comp/tacas_12_comp_locks/02_test_locks_6
+END
+test.desc
+K 25
+svn:wc:ra_dav:version-url
+V 115
+/svn/satabs/!svn/ver/310/releases/satabs-3.2/regression/tacas_12_comp/tacas_12_comp_locks/02_test_locks_6/test.desc
+END
+main.c
+K 25
+svn:wc:ra_dav:version-url
+V 112
+/svn/satabs/!svn/ver/310/releases/satabs-3.2/regression/tacas_12_comp/tacas_12_comp_locks/02_test_locks_6/main.c
+END

@@ -1,0 +1,17 @@
+K 25
+svn:wc:ra_dav:version-url
+V 140
+/svn/satabs/!svn/ver/194/releases/satabs-3.1/regression/tacas_12_comp/tacas_12_comp_ldv-drivers/37_usb_urb-drivers-usb-serial-ir-usb.ko-safe
+END
+main.c
+K 25
+svn:wc:ra_dav:version-url
+V 147
+/svn/satabs/!svn/ver/194/releases/satabs-3.1/regression/tacas_12_comp/tacas_12_comp_ldv-drivers/37_usb_urb-drivers-usb-serial-ir-usb.ko-safe/main.c
+END
+test.desc
+K 25
+svn:wc:ra_dav:version-url
+V 150
+/svn/satabs/!svn/ver/194/releases/satabs-3.1/regression/tacas_12_comp/tacas_12_comp_ldv-drivers/37_usb_urb-drivers-usb-serial-ir-usb.ko-safe/test.desc
+END

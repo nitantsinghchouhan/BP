@@ -1,0 +1,17 @@
+K 25
+svn:wc:ra_dav:version-url
+V 105
+/svn/satabs/!svn/ver/194/releases/satabs-3.1/regression/symmetry_aware_bugzilla/Bug76__non_spurious_trace
+END
+test.desc
+K 25
+svn:wc:ra_dav:version-url
+V 115
+/svn/satabs/!svn/ver/194/releases/satabs-3.1/regression/symmetry_aware_bugzilla/Bug76__non_spurious_trace/test.desc
+END
+main.c
+K 25
+svn:wc:ra_dav:version-url
+V 112
+/svn/satabs/!svn/ver/194/releases/satabs-3.1/regression/symmetry_aware_bugzilla/Bug76__non_spurious_trace/main.c
+END

@@ -1,0 +1,17 @@
+K 25
+svn:wc:ra_dav:version-url
+V 104
+/svn/satabs/!svn/ver/310/releases/satabs-3.2/regression/tacas_12_comp/tacas_12_comp_systemc/01_bist_cell
+END
+test.desc
+K 25
+svn:wc:ra_dav:version-url
+V 114
+/svn/satabs/!svn/ver/310/releases/satabs-3.2/regression/tacas_12_comp/tacas_12_comp_systemc/01_bist_cell/test.desc
+END
+main.c
+K 25
+svn:wc:ra_dav:version-url
+V 111
+/svn/satabs/!svn/ver/310/releases/satabs-3.2/regression/tacas_12_comp/tacas_12_comp_systemc/01_bist_cell/main.c
+END

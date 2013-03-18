@@ -1,0 +1,17 @@
+K 25
+svn:wc:ra_dav:version-url
+V 143
+/svn/satabs/!svn/ver/310/releases/satabs-3.2/regression/tacas_12_comp/tacas_12_comp_ldv-drivers/36_usb_urb-drivers-usb-misc-iowarrior.ko-unsafe
+END
+test.desc
+K 25
+svn:wc:ra_dav:version-url
+V 153
+/svn/satabs/!svn/ver/310/releases/satabs-3.2/regression/tacas_12_comp/tacas_12_comp_ldv-drivers/36_usb_urb-drivers-usb-misc-iowarrior.ko-unsafe/test.desc
+END
+main.c
+K 25
+svn:wc:ra_dav:version-url
+V 150
+/svn/satabs/!svn/ver/310/releases/satabs-3.2/regression/tacas_12_comp/tacas_12_comp_ldv-drivers/36_usb_urb-drivers-usb-misc-iowarrior.ko-unsafe/main.c
+END

@@ -1,0 +1,17 @@
+K 25
+svn:wc:ra_dav:version-url
+V 106
+/svn/satabs/!svn/ver/194/releases/satabs-3.1/regression/symmetry_aware_bugzilla/Bug132__refinement_failure
+END
+test.desc
+K 25
+svn:wc:ra_dav:version-url
+V 116
+/svn/satabs/!svn/ver/194/releases/satabs-3.1/regression/symmetry_aware_bugzilla/Bug132__refinement_failure/test.desc
+END
+main.c
+K 25
+svn:wc:ra_dav:version-url
+V 113
+/svn/satabs/!svn/ver/194/releases/satabs-3.1/regression/symmetry_aware_bugzilla/Bug132__refinement_failure/main.c
+END

@@ -1,0 +1,23 @@
+K 25
+svn:wc:ra_dav:version-url
+V 97
+/svn/satabs/!svn/ver/310/releases/satabs-3.2/regression/symmetry_aware_bugzilla/Bug74__array_init
+END
+basics.h
+K 25
+svn:wc:ra_dav:version-url
+V 106
+/svn/satabs/!svn/ver/310/releases/satabs-3.2/regression/symmetry_aware_bugzilla/Bug74__array_init/basics.h
+END
+test.desc
+K 25
+svn:wc:ra_dav:version-url
+V 107
+/svn/satabs/!svn/ver/310/releases/satabs-3.2/regression/symmetry_aware_bugzilla/Bug74__array_init/test.desc
+END
+main.c
+K 25
+svn:wc:ra_dav:version-url
+V 104
+/svn/satabs/!svn/ver/310/releases/satabs-3.2/regression/symmetry_aware_bugzilla/Bug74__array_init/main.c
+END

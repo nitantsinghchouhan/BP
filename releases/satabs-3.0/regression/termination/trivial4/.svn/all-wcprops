@@ -1,0 +1,17 @@
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/svn/satabs/!svn/ver/44/releases/satabs-3.0/regression/termination/trivial4
+END
+test.desc
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/svn/satabs/!svn/ver/44/releases/satabs-3.0/regression/termination/trivial4/test.desc
+END
+main.c
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/svn/satabs/!svn/ver/44/releases/satabs-3.0/regression/termination/trivial4/main.c
+END

@@ -1,0 +1,17 @@
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/svn/satabs/!svn/ver/310/releases/satabs-3.2/regression/symmetry_aware/14_stack_cas
+END
+test.desc
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/svn/satabs/!svn/ver/310/releases/satabs-3.2/regression/symmetry_aware/14_stack_cas/test.desc
+END
+main.c
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/svn/satabs/!svn/ver/310/releases/satabs-3.2/regression/symmetry_aware/14_stack_cas/main.c
+END

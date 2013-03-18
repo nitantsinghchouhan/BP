@@ -1,0 +1,17 @@
+K 25
+svn:wc:ra_dav:version-url
+V 141
+/svn/satabs/!svn/ver/194/releases/satabs-3.1/regression/tacas_12_comp/tacas_12_comp_ldv-drivers/26_usb_urb-drivers-input-tablet-kbtab.ko-safe
+END
+main.c
+K 25
+svn:wc:ra_dav:version-url
+V 148
+/svn/satabs/!svn/ver/194/releases/satabs-3.1/regression/tacas_12_comp/tacas_12_comp_ldv-drivers/26_usb_urb-drivers-input-tablet-kbtab.ko-safe/main.c
+END
+test.desc
+K 25
+svn:wc:ra_dav:version-url
+V 151
+/svn/satabs/!svn/ver/194/releases/satabs-3.1/regression/tacas_12_comp/tacas_12_comp_ldv-drivers/26_usb_urb-drivers-input-tablet-kbtab.ko-safe/test.desc
+END

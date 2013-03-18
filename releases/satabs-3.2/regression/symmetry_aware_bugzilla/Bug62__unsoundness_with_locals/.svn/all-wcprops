@@ -1,0 +1,17 @@
+K 25
+svn:wc:ra_dav:version-url
+V 110
+/svn/satabs/!svn/ver/310/releases/satabs-3.2/regression/symmetry_aware_bugzilla/Bug62__unsoundness_with_locals
+END
+test.desc
+K 25
+svn:wc:ra_dav:version-url
+V 120
+/svn/satabs/!svn/ver/310/releases/satabs-3.2/regression/symmetry_aware_bugzilla/Bug62__unsoundness_with_locals/test.desc
+END
+main.c
+K 25
+svn:wc:ra_dav:version-url
+V 117
+/svn/satabs/!svn/ver/310/releases/satabs-3.2/regression/symmetry_aware_bugzilla/Bug62__unsoundness_with_locals/main.c
+END

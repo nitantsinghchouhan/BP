@@ -1,0 +1,29 @@
+K 25
+svn:wc:ra_dav:version-url
+V 116
+/svn/satabs/!svn/ver/194/releases/satabs-3.1/regression/symmetry_aware_bugzilla/Bug65__Assertion_cube_is_satisfiable
+END
+PseudoRandomUsingAtomic.c
+K 25
+svn:wc:ra_dav:version-url
+V 142
+/svn/satabs/!svn/ver/194/releases/satabs-3.1/regression/symmetry_aware_bugzilla/Bug65__Assertion_cube_is_satisfiable/PseudoRandomUsingAtomic.c
+END
+basics.c
+K 25
+svn:wc:ra_dav:version-url
+V 125
+/svn/satabs/!svn/ver/194/releases/satabs-3.1/regression/symmetry_aware_bugzilla/Bug65__Assertion_cube_is_satisfiable/basics.c
+END
+basics.h
+K 25
+svn:wc:ra_dav:version-url
+V 125
+/svn/satabs/!svn/ver/194/releases/satabs-3.1/regression/symmetry_aware_bugzilla/Bug65__Assertion_cube_is_satisfiable/basics.h
+END
+test.desc
+K 25
+svn:wc:ra_dav:version-url
+V 126
+/svn/satabs/!svn/ver/194/releases/satabs-3.1/regression/symmetry_aware_bugzilla/Bug65__Assertion_cube_is_satisfiable/test.desc
+END

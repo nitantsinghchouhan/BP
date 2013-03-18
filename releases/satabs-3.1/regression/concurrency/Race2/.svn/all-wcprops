@@ -1,0 +1,17 @@
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/svn/satabs/!svn/ver/194/releases/satabs-3.1/regression/concurrency/Race2
+END
+test.desc
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/svn/satabs/!svn/ver/194/releases/satabs-3.1/regression/concurrency/Race2/test.desc
+END
+main.c
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/svn/satabs/!svn/ver/194/releases/satabs-3.1/regression/concurrency/Race2/main.c
+END

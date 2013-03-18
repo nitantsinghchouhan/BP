@@ -1,0 +1,17 @@
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/svn/satabs/!svn/ver/44/releases/satabs-3.0/regression/termination/count_up2
+END
+test.desc
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/svn/satabs/!svn/ver/44/releases/satabs-3.0/regression/termination/count_up2/test.desc
+END
+main.c
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/svn/satabs/!svn/ver/44/releases/satabs-3.0/regression/termination/count_up2/main.c
+END

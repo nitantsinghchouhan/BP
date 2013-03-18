@@ -1,0 +1,17 @@
+K 25
+svn:wc:ra_dav:version-url
+V 139
+/svn/satabs/!svn/ver/310/releases/satabs-3.2/regression/tacas_12_comp/tacas_12_comp_ldv-drivers/30_usb_urb-drivers-misc-c2port-core.ko-safe
+END
+main.c
+K 25
+svn:wc:ra_dav:version-url
+V 146
+/svn/satabs/!svn/ver/310/releases/satabs-3.2/regression/tacas_12_comp/tacas_12_comp_ldv-drivers/30_usb_urb-drivers-misc-c2port-core.ko-safe/main.c
+END
+test.desc
+K 25
+svn:wc:ra_dav:version-url
+V 149
+/svn/satabs/!svn/ver/310/releases/satabs-3.2/regression/tacas_12_comp/tacas_12_comp_ldv-drivers/30_usb_urb-drivers-misc-c2port-core.ko-safe/test.desc
+END

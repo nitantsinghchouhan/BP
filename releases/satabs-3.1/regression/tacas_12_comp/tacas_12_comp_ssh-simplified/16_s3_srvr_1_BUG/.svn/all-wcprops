@@ -1,0 +1,17 @@
+K 25
+svn:wc:ra_dav:version-url
+V 115
+/svn/satabs/!svn/ver/194/releases/satabs-3.1/regression/tacas_12_comp/tacas_12_comp_ssh-simplified/16_s3_srvr_1_BUG
+END
+test.desc
+K 25
+svn:wc:ra_dav:version-url
+V 125
+/svn/satabs/!svn/ver/194/releases/satabs-3.1/regression/tacas_12_comp/tacas_12_comp_ssh-simplified/16_s3_srvr_1_BUG/test.desc
+END
+main.c
+K 25
+svn:wc:ra_dav:version-url
+V 122
+/svn/satabs/!svn/ver/194/releases/satabs-3.1/regression/tacas_12_comp/tacas_12_comp_ssh-simplified/16_s3_srvr_1_BUG/main.c
+END

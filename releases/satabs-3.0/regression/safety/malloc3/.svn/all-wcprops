@@ -1,0 +1,17 @@
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/svn/satabs/!svn/ver/44/releases/satabs-3.0/regression/safety/malloc3
+END
+main.c
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/svn/satabs/!svn/ver/44/releases/satabs-3.0/regression/safety/malloc3/main.c
+END
+test.desc
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/svn/satabs/!svn/ver/44/releases/satabs-3.0/regression/safety/malloc3/test.desc
+END

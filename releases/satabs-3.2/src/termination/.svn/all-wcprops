@@ -1,0 +1,323 @@
+K 25
+svn:wc:ra_dav:version-url
+V 60
+/svn/satabs/!svn/ver/310/releases/satabs-3.2/src/termination
+END
+ranking_base.h
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/svn/satabs/!svn/ver/310/releases/satabs-3.2/src/termination/ranking_base.h
+END
+termination_direct.h
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/svn/satabs/!svn/ver/310/releases/satabs-3.2/src/termination/termination_direct.h
+END
+ranking.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/svn/satabs/!svn/ver/310/releases/satabs-3.2/src/termination/ranking.cpp
+END
+expr2seneschal.h
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/svn/satabs/!svn/ver/310/releases/satabs-3.2/src/termination/expr2seneschal.h
+END
+termination_ita.h
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/svn/satabs/!svn/ver/310/releases/satabs-3.2/src/termination/termination_ita.h
+END
+Makefile
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/svn/satabs/!svn/ver/310/releases/satabs-3.2/src/termination/Makefile
+END
+termination.h
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/svn/satabs/!svn/ver/310/releases/satabs-3.2/src/termination/termination.h
+END
+termination_slicer.h
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/svn/satabs/!svn/ver/310/releases/satabs-3.2/src/termination/termination_slicer.h
+END
+find_symbols_rw.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/svn/satabs/!svn/ver/310/releases/satabs-3.2/src/termination/find_symbols_rw.cpp
+END
+ranking_rankfinder.h
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/svn/satabs/!svn/ver/310/releases/satabs-3.2/src/termination/ranking_rankfinder.h
+END
+ranking_sat.h
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/svn/satabs/!svn/ver/310/releases/satabs-3.2/src/termination/ranking_sat.h
+END
+rankfunction_typecheck.h
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/svn/satabs/!svn/ver/310/releases/satabs-3.2/src/termination/rankfunction_typecheck.h
+END
+ranking_qbf_bitwise.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/svn/satabs/!svn/ver/310/releases/satabs-3.2/src/termination/ranking_qbf_bitwise.cpp
+END
+instrumentation.h
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/svn/satabs/!svn/ver/310/releases/satabs-3.2/src/termination/instrumentation.h
+END
+ranking_tools.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/svn/satabs/!svn/ver/310/releases/satabs-3.2/src/termination/ranking_tools.cpp
+END
+termination_path_enumeration.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/svn/satabs/!svn/ver/310/releases/satabs-3.2/src/termination/termination_path_enumeration.cpp
+END
+replace_identifier.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/svn/satabs/!svn/ver/310/releases/satabs-3.2/src/termination/replace_identifier.cpp
+END
+ranking_relation_cache.h
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/svn/satabs/!svn/ver/310/releases/satabs-3.2/src/termination/ranking_relation_cache.h
+END
+ranking_qbf_complete.h
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/svn/satabs/!svn/ver/310/releases/satabs-3.2/src/termination/ranking_qbf_complete.h
+END
+termination_results.h
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/svn/satabs/!svn/ver/310/releases/satabs-3.2/src/termination/termination_results.h
+END
+termination_cta.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/svn/satabs/!svn/ver/310/releases/satabs-3.2/src/termination/termination_cta.cpp
+END
+ranking_smt.h
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/svn/satabs/!svn/ver/310/releases/satabs-3.2/src/termination/ranking_smt.h
+END
+termination_bre.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/svn/satabs/!svn/ver/310/releases/satabs-3.2/src/termination/termination_bre.cpp
+END
+ranking_seneschal.h
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/svn/satabs/!svn/ver/310/releases/satabs-3.2/src/termination/ranking_seneschal.h
+END
+ranking_base.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/svn/satabs/!svn/ver/310/releases/satabs-3.2/src/termination/ranking_base.cpp
+END
+termination_direct.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/svn/satabs/!svn/ver/310/releases/satabs-3.2/src/termination/termination_direct.cpp
+END
+expr2seneschal.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/svn/satabs/!svn/ver/310/releases/satabs-3.2/src/termination/expr2seneschal.cpp
+END
+ranking_qbf.h
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/svn/satabs/!svn/ver/310/releases/satabs-3.2/src/termination/ranking_qbf.h
+END
+termination_ita.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/svn/satabs/!svn/ver/310/releases/satabs-3.2/src/termination/termination_ita.cpp
+END
+termination_base.h
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/svn/satabs/!svn/ver/310/releases/satabs-3.2/src/termination/termination_base.h
+END
+termination_slicer.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/svn/satabs/!svn/ver/310/releases/satabs-3.2/src/termination/termination_slicer.cpp
+END
+ranking_rankfinder.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/svn/satabs/!svn/ver/310/releases/satabs-3.2/src/termination/ranking_rankfinder.cpp
+END
+transform_loops.h
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/svn/satabs/!svn/ver/310/releases/satabs-3.2/src/termination/transform_loops.h
+END
+termination_main.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/svn/satabs/!svn/ver/310/releases/satabs-3.2/src/termination/termination_main.cpp
+END
+ranking.h
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/svn/satabs/!svn/ver/310/releases/satabs-3.2/src/termination/ranking.h
+END
+ranking_sat.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/svn/satabs/!svn/ver/310/releases/satabs-3.2/src/termination/ranking_sat.cpp
+END
+rankfunction_typecheck.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/svn/satabs/!svn/ver/310/releases/satabs-3.2/src/termination/rankfunction_typecheck.cpp
+END
+instrumentation.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/svn/satabs/!svn/ver/310/releases/satabs-3.2/src/termination/instrumentation.cpp
+END
+find_symbols_rw.h
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/svn/satabs/!svn/ver/310/releases/satabs-3.2/src/termination/find_symbols_rw.h
+END
+ranking_relation_cache.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/svn/satabs/!svn/ver/310/releases/satabs-3.2/src/termination/ranking_relation_cache.cpp
+END
+ranking_qbf_complete.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/svn/satabs/!svn/ver/310/releases/satabs-3.2/src/termination/ranking_qbf_complete.cpp
+END
+ranking_body.h
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/svn/satabs/!svn/ver/310/releases/satabs-3.2/src/termination/ranking_body.h
+END
+ranking_smt.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/svn/satabs/!svn/ver/310/releases/satabs-3.2/src/termination/ranking_smt.cpp
+END
+ranking_qbf_bitwise.h
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/svn/satabs/!svn/ver/310/releases/satabs-3.2/src/termination/ranking_qbf_bitwise.h
+END
+ranking_tools.h
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/svn/satabs/!svn/ver/310/releases/satabs-3.2/src/termination/ranking_tools.h
+END
+ranking_seneschal.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/svn/satabs/!svn/ver/310/releases/satabs-3.2/src/termination/ranking_seneschal.cpp
+END
+termination_path_enumeration.h
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/svn/satabs/!svn/ver/310/releases/satabs-3.2/src/termination/termination_path_enumeration.h
+END
+ranking_qbf.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/svn/satabs/!svn/ver/310/releases/satabs-3.2/src/termination/ranking_qbf.cpp
+END
+replace_identifier.h
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/svn/satabs/!svn/ver/310/releases/satabs-3.2/src/termination/replace_identifier.h
+END
+termination_base.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/svn/satabs/!svn/ver/310/releases/satabs-3.2/src/termination/termination_base.cpp
+END
+termination_cta.h
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/svn/satabs/!svn/ver/310/releases/satabs-3.2/src/termination/termination_cta.h
+END
+termination_bre.h
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/svn/satabs/!svn/ver/310/releases/satabs-3.2/src/termination/termination_bre.h
+END
+transform_loops.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/svn/satabs/!svn/ver/310/releases/satabs-3.2/src/termination/transform_loops.cpp
+END

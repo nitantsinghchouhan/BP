@@ -1,0 +1,23 @@
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/svn/satabs/!svn/ver/44/releases/satabs-3.0/regression/safety/Predicates1
+END
+test.desc
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/svn/satabs/!svn/ver/44/releases/satabs-3.0/regression/safety/Predicates1/test.desc
+END
+main.c
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/svn/satabs/!svn/ver/44/releases/satabs-3.0/regression/safety/Predicates1/main.c
+END
+main.predicates
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/svn/satabs/!svn/ver/44/releases/satabs-3.0/regression/safety/Predicates1/main.predicates
+END

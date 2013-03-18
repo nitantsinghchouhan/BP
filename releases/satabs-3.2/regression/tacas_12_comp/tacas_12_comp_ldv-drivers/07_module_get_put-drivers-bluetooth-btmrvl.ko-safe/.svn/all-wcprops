@@ -1,0 +1,17 @@
+K 25
+svn:wc:ra_dav:version-url
+V 146
+/svn/satabs/!svn/ver/310/releases/satabs-3.2/regression/tacas_12_comp/tacas_12_comp_ldv-drivers/07_module_get_put-drivers-bluetooth-btmrvl.ko-safe
+END
+main.c
+K 25
+svn:wc:ra_dav:version-url
+V 153
+/svn/satabs/!svn/ver/310/releases/satabs-3.2/regression/tacas_12_comp/tacas_12_comp_ldv-drivers/07_module_get_put-drivers-bluetooth-btmrvl.ko-safe/main.c
+END
+test.desc
+K 25
+svn:wc:ra_dav:version-url
+V 156
+/svn/satabs/!svn/ver/310/releases/satabs-3.2/regression/tacas_12_comp/tacas_12_comp_ldv-drivers/07_module_get_put-drivers-bluetooth-btmrvl.ko-safe/test.desc
+END
