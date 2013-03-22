@@ -1,0 +1,3 @@
+cd handmade
+../../releases/satabs-3.2/src/satabs --save-bps hello.c 
+cd ..
