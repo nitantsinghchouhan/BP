@@ -1,0 +1,2746 @@
+Terminals unused in grammar
+
+   "escaped identifier"
+
+
+Grammar
+
+    0 $accept: program $end
+
+    1 program: pstart g_decl_list fun_list pend
+
+    2 pstart: /* empty */
+
+    3 pend: /* empty */
+
+    4 g_decl_list: "decl" g_identifier_list ';' g_decl_list
+    5            | /* empty */
+
+    6 g_identifier_list: g_decl_id
+    7                  | g_identifier_list ',' g_decl_id
+
+    8 g_decl_id: "identifier"
+
+    9 decl_list: "decl" identifier_list ';' decl_list
+   10          | /* empty */
+
+   11 identifier_list: decl_id
+   12                | identifier_list ',' decl_id
+
+   13 decl_id: "identifier"
+
+   14 fun_list: function_definition
+   15         | function_definition fun_list
+
+   16 function_definition: function_heading parms "begin" decl_list enforce abortif statement_list "end"
+
+   17 function_heading: fun_type "identifier"
+
+   18 fun_type: fun_search_order "bool"
+   19         | fun_search_order "bool" '<' "integer" '>'
+   20         | fun_search_order "void"
+
+   21 fun_search_order: "dfs"
+   22                 | /* empty */
+
+   23 enforce: "enforce" expression ';'
+   24        | /* empty */
+
+   25 abortif: "abortif" expression ';'
+   26        | /* empty */
+
+   27 parms: '(' parameter_list ')'
+
+   28 parameter_list: identifier_list
+   29               | /* empty */
+
+   30 statement_list: labelled_statement
+   31               | statement_list labelled_statement
+   32               | statement_list ';'
+
+   33 labelled_statement: label_list concurrent_statement
+   34                   | concurrent_statement
+
+   35 label_list: label_list "identifier" ':'
+   36           | "identifier" ':'
+
+   37 target_label_list: target_label_list ',' "identifier"
+   38                  | "identifier"
+
+   39 concurrent_statement: statement
+   40                     | start_thread_statement ';'
+   41                     | end_thread_statement ';'
+   42                     | sync_statement ';'
+   43                     | atomic_begin_statement ';'
+   44                     | atomic_end_statement ';'
+
+   45 statement: dead_statement ';'
+   46          | parallel_assign ';'
+   47          | assert ';'
+   48          | assume ';'
+   49          | print ';'
+   50          | call ';'
+   51          | selection_statement
+   52          | iteration_statement
+   53          | jump_statement ';'
+
+   54 dead_statement: "dead" assign_id_list
+
+   55 parallel_assign: assign_id_list "assignment" assign_expression_list assign_constrain_opt
+   56                | assign_id_list "assignment" call
+
+   57 assign_constrain_opt: /* empty */
+   58                     | "constrain" expression
+
+   59 assign_expression_list: choose_expression
+   60                       | assign_expression_list ',' choose_expression
+
+   61 assign_id_list: asgn_id
+   62               | assign_id_list ',' asgn_id
+
+   63 asgn_id: "identifier"
+
+   64 assert: "assert" expression
+
+   65 assume: "assume" expression
+
+   66 print: "print" '(' expression_list ')'
+
+   67 call: "identifier" '(' expression_list ')'
+   68     | "identifier" '(' ')'
+
+   69 selection_statement: "if" choose_expression "then" statement_list elsif_list
+
+   70 elsif_list: "fi"
+   71           | "else" statement_list "fi"
+   72           | "elsif" choose_expression "then" statement_list elsif_list
+
+   73 iteration_statement: "while" expression "do" statement_list "od"
+
+   74 jump_statement: "return"
+   75               | "return" expression_list
+   76               | "skip"
+   77               | "goto" target_label_list
+
+   78 start_thread_statement: "start_thread" "goto" "identifier"
+   79                       | "start_thread" "identifier" '(' ')'
+
+   80 end_thread_statement: "end_thread"
+
+   81 sync_statement: "sync" "identifier"
+
+   82 atomic_begin_statement: "atomic_begin"
+
+   83 atomic_end_statement: "atomic_end"
+
+   84 primary_expression: '(' expression ')'
+   85                   | "*"
+   86                   | "schoose" '[' expression ',' expression ']'
+   87                   | "identifier"
+   88                   | '\'' "identifier"
+   89                   | "integer"
+
+   90 unary_expression: primary_expression
+   91                 | unary_operator primary_expression
+
+   92 unary_operator: '~'
+   93               | '!'
+
+   94 equality_expression: unary_expression
+   95                    | equality_expression "=" unary_expression
+   96                    | equality_expression "<>" unary_expression
+
+   97 and_expression: equality_expression
+   98               | and_expression "&" equality_expression
+
+   99 exclusive_or_expression: and_expression
+  100                        | exclusive_or_expression '^' and_expression
+
+  101 or_expression: exclusive_or_expression
+  102              | or_expression "|" exclusive_or_expression
+  103              | or_expression "implication" exclusive_or_expression
+
+  104 expression: or_expression
+  105           | expression "?" expression ':' or_expression
+
+  106 choose_expression: expression
+
+  107 expression_list: choose_expression
+  108                | expression_list ',' choose_expression
+
+
+Terminals, with rules where they appear
+
+$end (0) 0
+'!' (33) 93
+'\'' (39) 88
+'(' (40) 27 66 67 68 79 84
+')' (41) 27 66 67 68 79 84
+',' (44) 7 12 37 60 62 86 108
+':' (58) 35 36 105
+';' (59) 4 9 23 25 32 40 41 42 43 44 45 46 47 48 49 50 53
+'<' (60) 19
+'>' (62) 19
+'[' (91) 86
+']' (93) 86
+'^' (94) 100
+'~' (126) 92
+error (256)
+"identifier" (258) 8 13 17 35 36 37 38 63 67 68 78 79 81 87 88
+"escaped identifier" (259)
+"integer" (260) 19 89
+"*" (261) 85
+"assignment" (262) 55 56
+"=" (263) 95
+"<>" (264) 96
+"implication" (265) 103
+"decl" (266) 4 9
+"enforce" (267) 23
+"&" (268) 98
+"|" (269) 102
+"?" (270) 105
+"if" (271) 69
+"then" (272) 69 72
+"else" (273) 71
+"elsif" (274) 72
+"fi" (275) 70 71
+"while" (276) 73
+"do" (277) 73
+"od" (278) 73
+"return" (279) 74 75
+"skip" (280) 76
+"goto" (281) 77 78
+"begin" (282) 16
+"end" (283) 16
+"bool" (284) 18 19
+"void" (285) 20
+"assert" (286) 64
+"assume" (287) 65
+"print" (288) 66
+"schoose" (289) 86
+"constrain" (290) 58
+"dead" (291) 54
+"abortif" (292) 25
+"dfs" (293) 21
+"start_thread" (294) 78 79
+"end_thread" (295) 80
+"sync" (296) 81
+"atomic_begin" (297) 82
+"atomic_end" (298) 83
+
+
+Nonterminals, with rules where they appear
+
+$accept (57)
+    on left: 0
+program (58)
+    on left: 1, on right: 0
+pstart (59)
+    on left: 2, on right: 1
+pend (60)
+    on left: 3, on right: 1
+g_decl_list (61)
+    on left: 4 5, on right: 1 4
+g_identifier_list (62)
+    on left: 6 7, on right: 4 7
+g_decl_id (63)
+    on left: 8, on right: 6 7
+decl_list (64)
+    on left: 9 10, on right: 9 16
+identifier_list (65)
+    on left: 11 12, on right: 9 12 28
+decl_id (66)
+    on left: 13, on right: 11 12
+fun_list (67)
+    on left: 14 15, on right: 1 15
+function_definition (68)
+    on left: 16, on right: 14 15
+function_heading (69)
+    on left: 17, on right: 16
+fun_type (70)
+    on left: 18 19 20, on right: 17
+fun_search_order (71)
+    on left: 21 22, on right: 18 19 20
+enforce (72)
+    on left: 23 24, on right: 16
+abortif (73)
+    on left: 25 26, on right: 16
+parms (74)
+    on left: 27, on right: 16
+parameter_list (75)
+    on left: 28 29, on right: 27
+statement_list (76)
+    on left: 30 31 32, on right: 16 31 32 69 71 72 73
+labelled_statement (77)
+    on left: 33 34, on right: 30 31
+label_list (78)
+    on left: 35 36, on right: 33 35
+target_label_list (79)
+    on left: 37 38, on right: 37 77
+concurrent_statement (80)
+    on left: 39 40 41 42 43 44, on right: 33 34
+statement (81)
+    on left: 45 46 47 48 49 50 51 52 53, on right: 39
+dead_statement (82)
+    on left: 54, on right: 45
+parallel_assign (83)
+    on left: 55 56, on right: 46
+assign_constrain_opt (84)
+    on left: 57 58, on right: 55
+assign_expression_list (85)
+    on left: 59 60, on right: 55 60
+assign_id_list (86)
+    on left: 61 62, on right: 54 55 56 62
+asgn_id (87)
+    on left: 63, on right: 61 62
+assert (88)
+    on left: 64, on right: 47
+assume (89)
+    on left: 65, on right: 48
+print (90)
+    on left: 66, on right: 49
+call (91)
+    on left: 67 68, on right: 50 56
+selection_statement (92)
+    on left: 69, on right: 51
+elsif_list (93)
+    on left: 70 71 72, on right: 69 72
+iteration_statement (94)
+    on left: 73, on right: 52
+jump_statement (95)
+    on left: 74 75 76 77, on right: 53
+start_thread_statement (96)
+    on left: 78 79, on right: 40
+end_thread_statement (97)
+    on left: 80, on right: 41
+sync_statement (98)
+    on left: 81, on right: 42
+atomic_begin_statement (99)
+    on left: 82, on right: 43
+atomic_end_statement (100)
+    on left: 83, on right: 44
+primary_expression (101)
+    on left: 84 85 86 87 88 89, on right: 90 91
+unary_expression (102)
+    on left: 90 91, on right: 94 95 96
+unary_operator (103)
+    on left: 92 93, on right: 91
+equality_expression (104)
+    on left: 94 95 96, on right: 95 96 97 98
+and_expression (105)
+    on left: 97 98, on right: 98 99 100
+exclusive_or_expression (106)
+    on left: 99 100, on right: 100 101 102 103
+or_expression (107)
+    on left: 101 102 103, on right: 102 103 104 105
+expression (108)
+    on left: 104 105, on right: 23 25 58 64 65 73 84 86 105 106
+choose_expression (109)
+    on left: 106, on right: 59 60 69 72 107 108
+expression_list (110)
+    on left: 107 108, on right: 66 67 75 108
+
+
+state 0
+
+    0 $accept: . program $end
+
+    $default  reduce using rule 2 (pstart)
+
+    program  go to state 1
+    pstart   go to state 2
+
+
+state 1
+
+    0 $accept: program . $end
+
+    $end  shift, and go to state 3
+
+
+state 2
+
+    1 program: pstart . g_decl_list fun_list pend
+
+    "decl"  shift, and go to state 4
+
+    $default  reduce using rule 5 (g_decl_list)
+
+    g_decl_list  go to state 5
+
+
+state 3
+
+    0 $accept: program $end .
+
+    $default  accept
+
+
+state 4
+
+    4 g_decl_list: "decl" . g_identifier_list ';' g_decl_list
+
+    "identifier"  shift, and go to state 6
+
+    g_identifier_list  go to state 7
+    g_decl_id          go to state 8
+
+
+state 5
+
+    1 program: pstart g_decl_list . fun_list pend
+
+    "dfs"  shift, and go to state 9
+
+    $default  reduce using rule 22 (fun_search_order)
+
+    fun_list             go to state 10
+    function_definition  go to state 11
+    function_heading     go to state 12
+    fun_type             go to state 13
+    fun_search_order     go to state 14
+
+
+state 6
+
+    8 g_decl_id: "identifier" .
+
+    $default  reduce using rule 8 (g_decl_id)
+
+
+state 7
+
+    4 g_decl_list: "decl" g_identifier_list . ';' g_decl_list
+    7 g_identifier_list: g_identifier_list . ',' g_decl_id
+
+    ';'  shift, and go to state 15
+    ','  shift, and go to state 16
+
+
+state 8
+
+    6 g_identifier_list: g_decl_id .
+
+    $default  reduce using rule 6 (g_identifier_list)
+
+
+state 9
+
+   21 fun_search_order: "dfs" .
+
+    $default  reduce using rule 21 (fun_search_order)
+
+
+state 10
+
+    1 program: pstart g_decl_list fun_list . pend
+
+    $default  reduce using rule 3 (pend)
+
+    pend  go to state 17
+
+
+state 11
+
+   14 fun_list: function_definition .
+   15         | function_definition . fun_list
+
+    "dfs"  shift, and go to state 9
+
+    $end      reduce using rule 14 (fun_list)
+    $default  reduce using rule 22 (fun_search_order)
+
+    fun_list             go to state 18
+    function_definition  go to state 11
+    function_heading     go to state 12
+    fun_type             go to state 13
+    fun_search_order     go to state 14
+
+
+state 12
+
+   16 function_definition: function_heading . parms "begin" decl_list enforce abortif statement_list "end"
+
+    '('  shift, and go to state 19
+
+    parms  go to state 20
+
+
+state 13
+
+   17 function_heading: fun_type . "identifier"
+
+    "identifier"  shift, and go to state 21
+
+
+state 14
+
+   18 fun_type: fun_search_order . "bool"
+   19         | fun_search_order . "bool" '<' "integer" '>'
+   20         | fun_search_order . "void"
+
+    "bool"  shift, and go to state 22
+    "void"  shift, and go to state 23
+
+
+state 15
+
+    4 g_decl_list: "decl" g_identifier_list ';' . g_decl_list
+
+    "decl"  shift, and go to state 4
+
+    $default  reduce using rule 5 (g_decl_list)
+
+    g_decl_list  go to state 24
+
+
+state 16
+
+    7 g_identifier_list: g_identifier_list ',' . g_decl_id
+
+    "identifier"  shift, and go to state 6
+
+    g_decl_id  go to state 25
+
+
+state 17
+
+    1 program: pstart g_decl_list fun_list pend .
+
+    $default  reduce using rule 1 (program)
+
+
+state 18
+
+   15 fun_list: function_definition fun_list .
+
+    $default  reduce using rule 15 (fun_list)
+
+
+state 19
+
+   27 parms: '(' . parameter_list ')'
+
+    "identifier"  shift, and go to state 26
+
+    $default  reduce using rule 29 (parameter_list)
+
+    identifier_list  go to state 27
+    decl_id          go to state 28
+    parameter_list   go to state 29
+
+
+state 20
+
+   16 function_definition: function_heading parms . "begin" decl_list enforce abortif statement_list "end"
+
+    "begin"  shift, and go to state 30
+
+
+state 21
+
+   17 function_heading: fun_type "identifier" .
+
+    $default  reduce using rule 17 (function_heading)
+
+
+state 22
+
+   18 fun_type: fun_search_order "bool" .
+   19         | fun_search_order "bool" . '<' "integer" '>'
+
+    '<'  shift, and go to state 31
+
+    $default  reduce using rule 18 (fun_type)
+
+
+state 23
+
+   20 fun_type: fun_search_order "void" .
+
+    $default  reduce using rule 20 (fun_type)
+
+
+state 24
+
+    4 g_decl_list: "decl" g_identifier_list ';' g_decl_list .
+
+    $default  reduce using rule 4 (g_decl_list)
+
+
+state 25
+
+    7 g_identifier_list: g_identifier_list ',' g_decl_id .
+
+    $default  reduce using rule 7 (g_identifier_list)
+
+
+state 26
+
+   13 decl_id: "identifier" .
+
+    $default  reduce using rule 13 (decl_id)
+
+
+state 27
+
+   12 identifier_list: identifier_list . ',' decl_id
+   28 parameter_list: identifier_list .
+
+    ','  shift, and go to state 32
+
+    $default  reduce using rule 28 (parameter_list)
+
+
+state 28
+
+   11 identifier_list: decl_id .
+
+    $default  reduce using rule 11 (identifier_list)
+
+
+state 29
+
+   27 parms: '(' parameter_list . ')'
+
+    ')'  shift, and go to state 33
+
+
+state 30
+
+   16 function_definition: function_heading parms "begin" . decl_list enforce abortif statement_list "end"
+
+    "decl"  shift, and go to state 34
+
+    $default  reduce using rule 10 (decl_list)
+
+    decl_list  go to state 35
+
+
+state 31
+
+   19 fun_type: fun_search_order "bool" '<' . "integer" '>'
+
+    "integer"  shift, and go to state 36
+
+
+state 32
+
+   12 identifier_list: identifier_list ',' . decl_id
+
+    "identifier"  shift, and go to state 26
+
+    decl_id  go to state 37
+
+
+state 33
+
+   27 parms: '(' parameter_list ')' .
+
+    $default  reduce using rule 27 (parms)
+
+
+state 34
+
+    9 decl_list: "decl" . identifier_list ';' decl_list
+
+    "identifier"  shift, and go to state 26
+
+    identifier_list  go to state 38
+    decl_id          go to state 28
+
+
+state 35
+
+   16 function_definition: function_heading parms "begin" decl_list . enforce abortif statement_list "end"
+
+    "enforce"  shift, and go to state 39
+
+    $default  reduce using rule 24 (enforce)
+
+    enforce  go to state 40
+
+
+state 36
+
+   19 fun_type: fun_search_order "bool" '<' "integer" . '>'
+
+    '>'  shift, and go to state 41
+
+
+state 37
+
+   12 identifier_list: identifier_list ',' decl_id .
+
+    $default  reduce using rule 12 (identifier_list)
+
+
+state 38
+
+    9 decl_list: "decl" identifier_list . ';' decl_list
+   12 identifier_list: identifier_list . ',' decl_id
+
+    ';'  shift, and go to state 42
+    ','  shift, and go to state 32
+
+
+state 39
+
+   23 enforce: "enforce" . expression ';'
+
+    "identifier"  shift, and go to state 43
+    "integer"     shift, and go to state 44
+    "*"           shift, and go to state 45
+    "schoose"     shift, and go to state 46
+    '('           shift, and go to state 47
+    '\''          shift, and go to state 48
+    '~'           shift, and go to state 49
+    '!'           shift, and go to state 50
+
+    primary_expression       go to state 51
+    unary_expression         go to state 52
+    unary_operator           go to state 53
+    equality_expression      go to state 54
+    and_expression           go to state 55
+    exclusive_or_expression  go to state 56
+    or_expression            go to state 57
+    expression               go to state 58
+
+
+state 40
+
+   16 function_definition: function_heading parms "begin" decl_list enforce . abortif statement_list "end"
+
+    "abortif"  shift, and go to state 59
+
+    $default  reduce using rule 26 (abortif)
+
+    abortif  go to state 60
+
+
+state 41
+
+   19 fun_type: fun_search_order "bool" '<' "integer" '>' .
+
+    $default  reduce using rule 19 (fun_type)
+
+
+state 42
+
+    9 decl_list: "decl" identifier_list ';' . decl_list
+
+    "decl"  shift, and go to state 34
+
+    $default  reduce using rule 10 (decl_list)
+
+    decl_list  go to state 61
+
+
+state 43
+
+   87 primary_expression: "identifier" .
+
+    $default  reduce using rule 87 (primary_expression)
+
+
+state 44
+
+   89 primary_expression: "integer" .
+
+    $default  reduce using rule 89 (primary_expression)
+
+
+state 45
+
+   85 primary_expression: "*" .
+
+    $default  reduce using rule 85 (primary_expression)
+
+
+state 46
+
+   86 primary_expression: "schoose" . '[' expression ',' expression ']'
+
+    '['  shift, and go to state 62
+
+
+state 47
+
+   84 primary_expression: '(' . expression ')'
+
+    "identifier"  shift, and go to state 43
+    "integer"     shift, and go to state 44
+    "*"           shift, and go to state 45
+    "schoose"     shift, and go to state 46
+    '('           shift, and go to state 47
+    '\''          shift, and go to state 48
+    '~'           shift, and go to state 49
+    '!'           shift, and go to state 50
+
+    primary_expression       go to state 51
+    unary_expression         go to state 52
+    unary_operator           go to state 53
+    equality_expression      go to state 54
+    and_expression           go to state 55
+    exclusive_or_expression  go to state 56
+    or_expression            go to state 57
+    expression               go to state 63
+
+
+state 48
+
+   88 primary_expression: '\'' . "identifier"
+
+    "identifier"  shift, and go to state 64
+
+
+state 49
+
+   92 unary_operator: '~' .
+
+    $default  reduce using rule 92 (unary_operator)
+
+
+state 50
+
+   93 unary_operator: '!' .
+
+    $default  reduce using rule 93 (unary_operator)
+
+
+state 51
+
+   90 unary_expression: primary_expression .
+
+    $default  reduce using rule 90 (unary_expression)
+
+
+state 52
+
+   94 equality_expression: unary_expression .
+
+    $default  reduce using rule 94 (equality_expression)
+
+
+state 53
+
+   91 unary_expression: unary_operator . primary_expression
+
+    "identifier"  shift, and go to state 43
+    "integer"     shift, and go to state 44
+    "*"           shift, and go to state 45
+    "schoose"     shift, and go to state 46
+    '('           shift, and go to state 47
+    '\''          shift, and go to state 48
+
+    primary_expression  go to state 65
+
+
+state 54
+
+   95 equality_expression: equality_expression . "=" unary_expression
+   96                    | equality_expression . "<>" unary_expression
+   97 and_expression: equality_expression .
+
+    "="   shift, and go to state 66
+    "<>"  shift, and go to state 67
+
+    $default  reduce using rule 97 (and_expression)
+
+
+state 55
+
+   98 and_expression: and_expression . "&" equality_expression
+   99 exclusive_or_expression: and_expression .
+
+    "&"  shift, and go to state 68
+
+    $default  reduce using rule 99 (exclusive_or_expression)
+
+
+state 56
+
+  100 exclusive_or_expression: exclusive_or_expression . '^' and_expression
+  101 or_expression: exclusive_or_expression .
+
+    '^'  shift, and go to state 69
+
+    $default  reduce using rule 101 (or_expression)
+
+
+state 57
+
+  102 or_expression: or_expression . "|" exclusive_or_expression
+  103              | or_expression . "implication" exclusive_or_expression
+  104 expression: or_expression .
+
+    "implication"  shift, and go to state 70
+    "|"            shift, and go to state 71
+
+    $default  reduce using rule 104 (expression)
+
+
+state 58
+
+   23 enforce: "enforce" expression . ';'
+  105 expression: expression . "?" expression ':' or_expression
+
+    "?"  shift, and go to state 72
+    ';'  shift, and go to state 73
+
+
+state 59
+
+   25 abortif: "abortif" . expression ';'
+
+    "identifier"  shift, and go to state 43
+    "integer"     shift, and go to state 44
+    "*"           shift, and go to state 45
+    "schoose"     shift, and go to state 46
+    '('           shift, and go to state 47
+    '\''          shift, and go to state 48
+    '~'           shift, and go to state 49
+    '!'           shift, and go to state 50
+
+    primary_expression       go to state 51
+    unary_expression         go to state 52
+    unary_operator           go to state 53
+    equality_expression      go to state 54
+    and_expression           go to state 55
+    exclusive_or_expression  go to state 56
+    or_expression            go to state 57
+    expression               go to state 74
+
+
+state 60
+
+   16 function_definition: function_heading parms "begin" decl_list enforce abortif . statement_list "end"
+
+    "identifier"    shift, and go to state 75
+    "if"            shift, and go to state 76
+    "while"         shift, and go to state 77
+    "return"        shift, and go to state 78
+    "skip"          shift, and go to state 79
+    "goto"          shift, and go to state 80
+    "assert"        shift, and go to state 81
+    "assume"        shift, and go to state 82
+    "print"         shift, and go to state 83
+    "dead"          shift, and go to state 84
+    "start_thread"  shift, and go to state 85
+    "end_thread"    shift, and go to state 86
+    "sync"          shift, and go to state 87
+    "atomic_begin"  shift, and go to state 88
+    "atomic_end"    shift, and go to state 89
+
+    statement_list          go to state 90
+    labelled_statement      go to state 91
+    label_list              go to state 92
+    concurrent_statement    go to state 93
+    statement               go to state 94
+    dead_statement          go to state 95
+    parallel_assign         go to state 96
+    assign_id_list          go to state 97
+    asgn_id                 go to state 98
+    assert                  go to state 99
+    assume                  go to state 100
+    print                   go to state 101
+    call                    go to state 102
+    selection_statement     go to state 103
+    iteration_statement     go to state 104
+    jump_statement          go to state 105
+    start_thread_statement  go to state 106
+    end_thread_statement    go to state 107
+    sync_statement          go to state 108
+    atomic_begin_statement  go to state 109
+    atomic_end_statement    go to state 110
+
+
+state 61
+
+    9 decl_list: "decl" identifier_list ';' decl_list .
+
+    $default  reduce using rule 9 (decl_list)
+
+
+state 62
+
+   86 primary_expression: "schoose" '[' . expression ',' expression ']'
+
+    "identifier"  shift, and go to state 43
+    "integer"     shift, and go to state 44
+    "*"           shift, and go to state 45
+    "schoose"     shift, and go to state 46
+    '('           shift, and go to state 47
+    '\''          shift, and go to state 48
+    '~'           shift, and go to state 49
+    '!'           shift, and go to state 50
+
+    primary_expression       go to state 51
+    unary_expression         go to state 52
+    unary_operator           go to state 53
+    equality_expression      go to state 54
+    and_expression           go to state 55
+    exclusive_or_expression  go to state 56
+    or_expression            go to state 57
+    expression               go to state 111
+
+
+state 63
+
+   84 primary_expression: '(' expression . ')'
+  105 expression: expression . "?" expression ':' or_expression
+
+    "?"  shift, and go to state 72
+    ')'  shift, and go to state 112
+
+
+state 64
+
+   88 primary_expression: '\'' "identifier" .
+
+    $default  reduce using rule 88 (primary_expression)
+
+
+state 65
+
+   91 unary_expression: unary_operator primary_expression .
+
+    $default  reduce using rule 91 (unary_expression)
+
+
+state 66
+
+   95 equality_expression: equality_expression "=" . unary_expression
+
+    "identifier"  shift, and go to state 43
+    "integer"     shift, and go to state 44
+    "*"           shift, and go to state 45
+    "schoose"     shift, and go to state 46
+    '('           shift, and go to state 47
+    '\''          shift, and go to state 48
+    '~'           shift, and go to state 49
+    '!'           shift, and go to state 50
+
+    primary_expression  go to state 51
+    unary_expression    go to state 113
+    unary_operator      go to state 53
+
+
+state 67
+
+   96 equality_expression: equality_expression "<>" . unary_expression
+
+    "identifier"  shift, and go to state 43
+    "integer"     shift, and go to state 44
+    "*"           shift, and go to state 45
+    "schoose"     shift, and go to state 46
+    '('           shift, and go to state 47
+    '\''          shift, and go to state 48
+    '~'           shift, and go to state 49
+    '!'           shift, and go to state 50
+
+    primary_expression  go to state 51
+    unary_expression    go to state 114
+    unary_operator      go to state 53
+
+
+state 68
+
+   98 and_expression: and_expression "&" . equality_expression
+
+    "identifier"  shift, and go to state 43
+    "integer"     shift, and go to state 44
+    "*"           shift, and go to state 45
+    "schoose"     shift, and go to state 46
+    '('           shift, and go to state 47
+    '\''          shift, and go to state 48
+    '~'           shift, and go to state 49
+    '!'           shift, and go to state 50
+
+    primary_expression   go to state 51
+    unary_expression     go to state 52
+    unary_operator       go to state 53
+    equality_expression  go to state 115
+
+
+state 69
+
+  100 exclusive_or_expression: exclusive_or_expression '^' . and_expression
+
+    "identifier"  shift, and go to state 43
+    "integer"     shift, and go to state 44
+    "*"           shift, and go to state 45
+    "schoose"     shift, and go to state 46
+    '('           shift, and go to state 47
+    '\''          shift, and go to state 48
+    '~'           shift, and go to state 49
+    '!'           shift, and go to state 50
+
+    primary_expression   go to state 51
+    unary_expression     go to state 52
+    unary_operator       go to state 53
+    equality_expression  go to state 54
+    and_expression       go to state 116
+
+
+state 70
+
+  103 or_expression: or_expression "implication" . exclusive_or_expression
+
+    "identifier"  shift, and go to state 43
+    "integer"     shift, and go to state 44
+    "*"           shift, and go to state 45
+    "schoose"     shift, and go to state 46
+    '('           shift, and go to state 47
+    '\''          shift, and go to state 48
+    '~'           shift, and go to state 49
+    '!'           shift, and go to state 50
+
+    primary_expression       go to state 51
+    unary_expression         go to state 52
+    unary_operator           go to state 53
+    equality_expression      go to state 54
+    and_expression           go to state 55
+    exclusive_or_expression  go to state 117
+
+
+state 71
+
+  102 or_expression: or_expression "|" . exclusive_or_expression
+
+    "identifier"  shift, and go to state 43
+    "integer"     shift, and go to state 44
+    "*"           shift, and go to state 45
+    "schoose"     shift, and go to state 46
+    '('           shift, and go to state 47
+    '\''          shift, and go to state 48
+    '~'           shift, and go to state 49
+    '!'           shift, and go to state 50
+
+    primary_expression       go to state 51
+    unary_expression         go to state 52
+    unary_operator           go to state 53
+    equality_expression      go to state 54
+    and_expression           go to state 55
+    exclusive_or_expression  go to state 118
+
+
+state 72
+
+  105 expression: expression "?" . expression ':' or_expression
+
+    "identifier"  shift, and go to state 43
+    "integer"     shift, and go to state 44
+    "*"           shift, and go to state 45
+    "schoose"     shift, and go to state 46
+    '('           shift, and go to state 47
+    '\''          shift, and go to state 48
+    '~'           shift, and go to state 49
+    '!'           shift, and go to state 50
+
+    primary_expression       go to state 51
+    unary_expression         go to state 52
+    unary_operator           go to state 53
+    equality_expression      go to state 54
+    and_expression           go to state 55
+    exclusive_or_expression  go to state 56
+    or_expression            go to state 57
+    expression               go to state 119
+
+
+state 73
+
+   23 enforce: "enforce" expression ';' .
+
+    $default  reduce using rule 23 (enforce)
+
+
+state 74
+
+   25 abortif: "abortif" expression . ';'
+  105 expression: expression . "?" expression ':' or_expression
+
+    "?"  shift, and go to state 72
+    ';'  shift, and go to state 120
+
+
+state 75
+
+   36 label_list: "identifier" . ':'
+   63 asgn_id: "identifier" .
+   67 call: "identifier" . '(' expression_list ')'
+   68     | "identifier" . '(' ')'
+
+    '('  shift, and go to state 121
+    ':'  shift, and go to state 122
+
+    $default  reduce using rule 63 (asgn_id)
+
+
+state 76
+
+   69 selection_statement: "if" . choose_expression "then" statement_list elsif_list
+
+    "identifier"  shift, and go to state 43
+    "integer"     shift, and go to state 44
+    "*"           shift, and go to state 45
+    "schoose"     shift, and go to state 46
+    '('           shift, and go to state 47
+    '\''          shift, and go to state 48
+    '~'           shift, and go to state 49
+    '!'           shift, and go to state 50
+
+    primary_expression       go to state 51
+    unary_expression         go to state 52
+    unary_operator           go to state 53
+    equality_expression      go to state 54
+    and_expression           go to state 55
+    exclusive_or_expression  go to state 56
+    or_expression            go to state 57
+    expression               go to state 123
+    choose_expression        go to state 124
+
+
+state 77
+
+   73 iteration_statement: "while" . expression "do" statement_list "od"
+
+    "identifier"  shift, and go to state 43
+    "integer"     shift, and go to state 44
+    "*"           shift, and go to state 45
+    "schoose"     shift, and go to state 46
+    '('           shift, and go to state 47
+    '\''          shift, and go to state 48
+    '~'           shift, and go to state 49
+    '!'           shift, and go to state 50
+
+    primary_expression       go to state 51
+    unary_expression         go to state 52
+    unary_operator           go to state 53
+    equality_expression      go to state 54
+    and_expression           go to state 55
+    exclusive_or_expression  go to state 56
+    or_expression            go to state 57
+    expression               go to state 125
+
+
+state 78
+
+   74 jump_statement: "return" .
+   75               | "return" . expression_list
+
+    "identifier"  shift, and go to state 43
+    "integer"     shift, and go to state 44
+    "*"           shift, and go to state 45
+    "schoose"     shift, and go to state 46
+    '('           shift, and go to state 47
+    '\''          shift, and go to state 48
+    '~'           shift, and go to state 49
+    '!'           shift, and go to state 50
+
+    $default  reduce using rule 74 (jump_statement)
+
+    primary_expression       go to state 51
+    unary_expression         go to state 52
+    unary_operator           go to state 53
+    equality_expression      go to state 54
+    and_expression           go to state 55
+    exclusive_or_expression  go to state 56
+    or_expression            go to state 57
+    expression               go to state 123
+    choose_expression        go to state 126
+    expression_list          go to state 127
+
+
+state 79
+
+   76 jump_statement: "skip" .
+
+    $default  reduce using rule 76 (jump_statement)
+
+
+state 80
+
+   77 jump_statement: "goto" . target_label_list
+
+    "identifier"  shift, and go to state 128
+
+    target_label_list  go to state 129
+
+
+state 81
+
+   64 assert: "assert" . expression
+
+    "identifier"  shift, and go to state 43
+    "integer"     shift, and go to state 44
+    "*"           shift, and go to state 45
+    "schoose"     shift, and go to state 46
+    '('           shift, and go to state 47
+    '\''          shift, and go to state 48
+    '~'           shift, and go to state 49
+    '!'           shift, and go to state 50
+
+    primary_expression       go to state 51
+    unary_expression         go to state 52
+    unary_operator           go to state 53
+    equality_expression      go to state 54
+    and_expression           go to state 55
+    exclusive_or_expression  go to state 56
+    or_expression            go to state 57
+    expression               go to state 130
+
+
+state 82
+
+   65 assume: "assume" . expression
+
+    "identifier"  shift, and go to state 43
+    "integer"     shift, and go to state 44
+    "*"           shift, and go to state 45
+    "schoose"     shift, and go to state 46
+    '('           shift, and go to state 47
+    '\''          shift, and go to state 48
+    '~'           shift, and go to state 49
+    '!'           shift, and go to state 50
+
+    primary_expression       go to state 51
+    unary_expression         go to state 52
+    unary_operator           go to state 53
+    equality_expression      go to state 54
+    and_expression           go to state 55
+    exclusive_or_expression  go to state 56
+    or_expression            go to state 57
+    expression               go to state 131
+
+
+state 83
+
+   66 print: "print" . '(' expression_list ')'
+
+    '('  shift, and go to state 132
+
+
+state 84
+
+   54 dead_statement: "dead" . assign_id_list
+
+    "identifier"  shift, and go to state 133
+
+    assign_id_list  go to state 134
+    asgn_id         go to state 98
+
+
+state 85
+
+   78 start_thread_statement: "start_thread" . "goto" "identifier"
+   79                       | "start_thread" . "identifier" '(' ')'
+
+    "identifier"  shift, and go to state 135
+    "goto"        shift, and go to state 136
+
+
+state 86
+
+   80 end_thread_statement: "end_thread" .
+
+    $default  reduce using rule 80 (end_thread_statement)
+
+
+state 87
+
+   81 sync_statement: "sync" . "identifier"
+
+    "identifier"  shift, and go to state 137
+
+
+state 88
+
+   82 atomic_begin_statement: "atomic_begin" .
+
+    $default  reduce using rule 82 (atomic_begin_statement)
+
+
+state 89
+
+   83 atomic_end_statement: "atomic_end" .
+
+    $default  reduce using rule 83 (atomic_end_statement)
+
+
+state 90
+
+   16 function_definition: function_heading parms "begin" decl_list enforce abortif statement_list . "end"
+   31 statement_list: statement_list . labelled_statement
+   32               | statement_list . ';'
+
+    "identifier"    shift, and go to state 75
+    "if"            shift, and go to state 76
+    "while"         shift, and go to state 77
+    "return"        shift, and go to state 78
+    "skip"          shift, and go to state 79
+    "goto"          shift, and go to state 80
+    "end"           shift, and go to state 138
+    "assert"        shift, and go to state 81
+    "assume"        shift, and go to state 82
+    "print"         shift, and go to state 83
+    "dead"          shift, and go to state 84
+    "start_thread"  shift, and go to state 85
+    "end_thread"    shift, and go to state 86
+    "sync"          shift, and go to state 87
+    "atomic_begin"  shift, and go to state 88
+    "atomic_end"    shift, and go to state 89
+    ';'             shift, and go to state 139
+
+    labelled_statement      go to state 140
+    label_list              go to state 92
+    concurrent_statement    go to state 93
+    statement               go to state 94
+    dead_statement          go to state 95
+    parallel_assign         go to state 96
+    assign_id_list          go to state 97
+    asgn_id                 go to state 98
+    assert                  go to state 99
+    assume                  go to state 100
+    print                   go to state 101
+    call                    go to state 102
+    selection_statement     go to state 103
+    iteration_statement     go to state 104
+    jump_statement          go to state 105
+    start_thread_statement  go to state 106
+    end_thread_statement    go to state 107
+    sync_statement          go to state 108
+    atomic_begin_statement  go to state 109
+    atomic_end_statement    go to state 110
+
+
+state 91
+
+   30 statement_list: labelled_statement .
+
+    $default  reduce using rule 30 (statement_list)
+
+
+state 92
+
+   33 labelled_statement: label_list . concurrent_statement
+   35 label_list: label_list . "identifier" ':'
+
+    "identifier"    shift, and go to state 141
+    "if"            shift, and go to state 76
+    "while"         shift, and go to state 77
+    "return"        shift, and go to state 78
+    "skip"          shift, and go to state 79
+    "goto"          shift, and go to state 80
+    "assert"        shift, and go to state 81
+    "assume"        shift, and go to state 82
+    "print"         shift, and go to state 83
+    "dead"          shift, and go to state 84
+    "start_thread"  shift, and go to state 85
+    "end_thread"    shift, and go to state 86
+    "sync"          shift, and go to state 87
+    "atomic_begin"  shift, and go to state 88
+    "atomic_end"    shift, and go to state 89
+
+    concurrent_statement    go to state 142
+    statement               go to state 94
+    dead_statement          go to state 95
+    parallel_assign         go to state 96
+    assign_id_list          go to state 97
+    asgn_id                 go to state 98
+    assert                  go to state 99
+    assume                  go to state 100
+    print                   go to state 101
+    call                    go to state 102
+    selection_statement     go to state 103
+    iteration_statement     go to state 104
+    jump_statement          go to state 105
+    start_thread_statement  go to state 106
+    end_thread_statement    go to state 107
+    sync_statement          go to state 108
+    atomic_begin_statement  go to state 109
+    atomic_end_statement    go to state 110
+
+
+state 93
+
+   34 labelled_statement: concurrent_statement .
+
+    $default  reduce using rule 34 (labelled_statement)
+
+
+state 94
+
+   39 concurrent_statement: statement .
+
+    $default  reduce using rule 39 (concurrent_statement)
+
+
+state 95
+
+   45 statement: dead_statement . ';'
+
+    ';'  shift, and go to state 143
+
+
+state 96
+
+   46 statement: parallel_assign . ';'
+
+    ';'  shift, and go to state 144
+
+
+state 97
+
+   55 parallel_assign: assign_id_list . "assignment" assign_expression_list assign_constrain_opt
+   56                | assign_id_list . "assignment" call
+   62 assign_id_list: assign_id_list . ',' asgn_id
+
+    "assignment"  shift, and go to state 145
+    ','           shift, and go to state 146
+
+
+state 98
+
+   61 assign_id_list: asgn_id .
+
+    $default  reduce using rule 61 (assign_id_list)
+
+
+state 99
+
+   47 statement: assert . ';'
+
+    ';'  shift, and go to state 147
+
+
+state 100
+
+   48 statement: assume . ';'
+
+    ';'  shift, and go to state 148
+
+
+state 101
+
+   49 statement: print . ';'
+
+    ';'  shift, and go to state 149
+
+
+state 102
+
+   50 statement: call . ';'
+
+    ';'  shift, and go to state 150
+
+
+state 103
+
+   51 statement: selection_statement .
+
+    $default  reduce using rule 51 (statement)
+
+
+state 104
+
+   52 statement: iteration_statement .
+
+    $default  reduce using rule 52 (statement)
+
+
+state 105
+
+   53 statement: jump_statement . ';'
+
+    ';'  shift, and go to state 151
+
+
+state 106
+
+   40 concurrent_statement: start_thread_statement . ';'
+
+    ';'  shift, and go to state 152
+
+
+state 107
+
+   41 concurrent_statement: end_thread_statement . ';'
+
+    ';'  shift, and go to state 153
+
+
+state 108
+
+   42 concurrent_statement: sync_statement . ';'
+
+    ';'  shift, and go to state 154
+
+
+state 109
+
+   43 concurrent_statement: atomic_begin_statement . ';'
+
+    ';'  shift, and go to state 155
+
+
+state 110
+
+   44 concurrent_statement: atomic_end_statement . ';'
+
+    ';'  shift, and go to state 156
+
+
+state 111
+
+   86 primary_expression: "schoose" '[' expression . ',' expression ']'
+  105 expression: expression . "?" expression ':' or_expression
+
+    "?"  shift, and go to state 72
+    ','  shift, and go to state 157
+
+
+state 112
+
+   84 primary_expression: '(' expression ')' .
+
+    $default  reduce using rule 84 (primary_expression)
+
+
+state 113
+
+   95 equality_expression: equality_expression "=" unary_expression .
+
+    $default  reduce using rule 95 (equality_expression)
+
+
+state 114
+
+   96 equality_expression: equality_expression "<>" unary_expression .
+
+    $default  reduce using rule 96 (equality_expression)
+
+
+state 115
+
+   95 equality_expression: equality_expression . "=" unary_expression
+   96                    | equality_expression . "<>" unary_expression
+   98 and_expression: and_expression "&" equality_expression .
+
+    "="   shift, and go to state 66
+    "<>"  shift, and go to state 67
+
+    $default  reduce using rule 98 (and_expression)
+
+
+state 116
+
+   98 and_expression: and_expression . "&" equality_expression
+  100 exclusive_or_expression: exclusive_or_expression '^' and_expression .
+
+    "&"  shift, and go to state 68
+
+    $default  reduce using rule 100 (exclusive_or_expression)
+
+
+state 117
+
+  100 exclusive_or_expression: exclusive_or_expression . '^' and_expression
+  103 or_expression: or_expression "implication" exclusive_or_expression .
+
+    '^'  shift, and go to state 69
+
+    $default  reduce using rule 103 (or_expression)
+
+
+state 118
+
+  100 exclusive_or_expression: exclusive_or_expression . '^' and_expression
+  102 or_expression: or_expression "|" exclusive_or_expression .
+
+    '^'  shift, and go to state 69
+
+    $default  reduce using rule 102 (or_expression)
+
+
+state 119
+
+  105 expression: expression . "?" expression ':' or_expression
+  105           | expression "?" expression . ':' or_expression
+
+    "?"  shift, and go to state 72
+    ':'  shift, and go to state 158
+
+
+state 120
+
+   25 abortif: "abortif" expression ';' .
+
+    $default  reduce using rule 25 (abortif)
+
+
+state 121
+
+   67 call: "identifier" '(' . expression_list ')'
+   68     | "identifier" '(' . ')'
+
+    "identifier"  shift, and go to state 43
+    "integer"     shift, and go to state 44
+    "*"           shift, and go to state 45
+    "schoose"     shift, and go to state 46
+    '('           shift, and go to state 47
+    ')'           shift, and go to state 159
+    '\''          shift, and go to state 48
+    '~'           shift, and go to state 49
+    '!'           shift, and go to state 50
+
+    primary_expression       go to state 51
+    unary_expression         go to state 52
+    unary_operator           go to state 53
+    equality_expression      go to state 54
+    and_expression           go to state 55
+    exclusive_or_expression  go to state 56
+    or_expression            go to state 57
+    expression               go to state 123
+    choose_expression        go to state 126
+    expression_list          go to state 160
+
+
+state 122
+
+   36 label_list: "identifier" ':' .
+
+    $default  reduce using rule 36 (label_list)
+
+
+state 123
+
+  105 expression: expression . "?" expression ':' or_expression
+  106 choose_expression: expression .
+
+    "?"  shift, and go to state 72
+
+    $default  reduce using rule 106 (choose_expression)
+
+
+state 124
+
+   69 selection_statement: "if" choose_expression . "then" statement_list elsif_list
+
+    "then"  shift, and go to state 161
+
+
+state 125
+
+   73 iteration_statement: "while" expression . "do" statement_list "od"
+  105 expression: expression . "?" expression ':' or_expression
+
+    "?"   shift, and go to state 72
+    "do"  shift, and go to state 162
+
+
+state 126
+
+  107 expression_list: choose_expression .
+
+    $default  reduce using rule 107 (expression_list)
+
+
+state 127
+
+   75 jump_statement: "return" expression_list .
+  108 expression_list: expression_list . ',' choose_expression
+
+    ','  shift, and go to state 163
+
+    $default  reduce using rule 75 (jump_statement)
+
+
+state 128
+
+   38 target_label_list: "identifier" .
+
+    $default  reduce using rule 38 (target_label_list)
+
+
+state 129
+
+   37 target_label_list: target_label_list . ',' "identifier"
+   77 jump_statement: "goto" target_label_list .
+
+    ','  shift, and go to state 164
+
+    $default  reduce using rule 77 (jump_statement)
+
+
+state 130
+
+   64 assert: "assert" expression .
+  105 expression: expression . "?" expression ':' or_expression
+
+    "?"  shift, and go to state 72
+
+    $default  reduce using rule 64 (assert)
+
+
+state 131
+
+   65 assume: "assume" expression .
+  105 expression: expression . "?" expression ':' or_expression
+
+    "?"  shift, and go to state 72
+
+    $default  reduce using rule 65 (assume)
+
+
+state 132
+
+   66 print: "print" '(' . expression_list ')'
+
+    "identifier"  shift, and go to state 43
+    "integer"     shift, and go to state 44
+    "*"           shift, and go to state 45
+    "schoose"     shift, and go to state 46
+    '('           shift, and go to state 47
+    '\''          shift, and go to state 48
+    '~'           shift, and go to state 49
+    '!'           shift, and go to state 50
+
+    primary_expression       go to state 51
+    unary_expression         go to state 52
+    unary_operator           go to state 53
+    equality_expression      go to state 54
+    and_expression           go to state 55
+    exclusive_or_expression  go to state 56
+    or_expression            go to state 57
+    expression               go to state 123
+    choose_expression        go to state 126
+    expression_list          go to state 165
+
+
+state 133
+
+   63 asgn_id: "identifier" .
+
+    $default  reduce using rule 63 (asgn_id)
+
+
+state 134
+
+   54 dead_statement: "dead" assign_id_list .
+   62 assign_id_list: assign_id_list . ',' asgn_id
+
+    ','  shift, and go to state 146
+
+    $default  reduce using rule 54 (dead_statement)
+
+
+state 135
+
+   79 start_thread_statement: "start_thread" "identifier" . '(' ')'
+
+    '('  shift, and go to state 166
+
+
+state 136
+
+   78 start_thread_statement: "start_thread" "goto" . "identifier"
+
+    "identifier"  shift, and go to state 167
+
+
+state 137
+
+   81 sync_statement: "sync" "identifier" .
+
+    $default  reduce using rule 81 (sync_statement)
+
+
+state 138
+
+   16 function_definition: function_heading parms "begin" decl_list enforce abortif statement_list "end" .
+
+    $default  reduce using rule 16 (function_definition)
+
+
+state 139
+
+   32 statement_list: statement_list ';' .
+
+    $default  reduce using rule 32 (statement_list)
+
+
+state 140
+
+   31 statement_list: statement_list labelled_statement .
+
+    $default  reduce using rule 31 (statement_list)
+
+
+state 141
+
+   35 label_list: label_list "identifier" . ':'
+   63 asgn_id: "identifier" .
+   67 call: "identifier" . '(' expression_list ')'
+   68     | "identifier" . '(' ')'
+
+    '('  shift, and go to state 121
+    ':'  shift, and go to state 168
+
+    $default  reduce using rule 63 (asgn_id)
+
+
+state 142
+
+   33 labelled_statement: label_list concurrent_statement .
+
+    $default  reduce using rule 33 (labelled_statement)
+
+
+state 143
+
+   45 statement: dead_statement ';' .
+
+    $default  reduce using rule 45 (statement)
+
+
+state 144
+
+   46 statement: parallel_assign ';' .
+
+    $default  reduce using rule 46 (statement)
+
+
+state 145
+
+   55 parallel_assign: assign_id_list "assignment" . assign_expression_list assign_constrain_opt
+   56                | assign_id_list "assignment" . call
+
+    "identifier"  shift, and go to state 169
+    "integer"     shift, and go to state 44
+    "*"           shift, and go to state 45
+    "schoose"     shift, and go to state 46
+    '('           shift, and go to state 47
+    '\''          shift, and go to state 48
+    '~'           shift, and go to state 49
+    '!'           shift, and go to state 50
+
+    assign_expression_list   go to state 170
+    call                     go to state 171
+    primary_expression       go to state 51
+    unary_expression         go to state 52
+    unary_operator           go to state 53
+    equality_expression      go to state 54
+    and_expression           go to state 55
+    exclusive_or_expression  go to state 56
+    or_expression            go to state 57
+    expression               go to state 123
+    choose_expression        go to state 172
+
+
+state 146
+
+   62 assign_id_list: assign_id_list ',' . asgn_id
+
+    "identifier"  shift, and go to state 133
+
+    asgn_id  go to state 173
+
+
+state 147
+
+   47 statement: assert ';' .
+
+    $default  reduce using rule 47 (statement)
+
+
+state 148
+
+   48 statement: assume ';' .
+
+    $default  reduce using rule 48 (statement)
+
+
+state 149
+
+   49 statement: print ';' .
+
+    $default  reduce using rule 49 (statement)
+
+
+state 150
+
+   50 statement: call ';' .
+
+    $default  reduce using rule 50 (statement)
+
+
+state 151
+
+   53 statement: jump_statement ';' .
+
+    $default  reduce using rule 53 (statement)
+
+
+state 152
+
+   40 concurrent_statement: start_thread_statement ';' .
+
+    $default  reduce using rule 40 (concurrent_statement)
+
+
+state 153
+
+   41 concurrent_statement: end_thread_statement ';' .
+
+    $default  reduce using rule 41 (concurrent_statement)
+
+
+state 154
+
+   42 concurrent_statement: sync_statement ';' .
+
+    $default  reduce using rule 42 (concurrent_statement)
+
+
+state 155
+
+   43 concurrent_statement: atomic_begin_statement ';' .
+
+    $default  reduce using rule 43 (concurrent_statement)
+
+
+state 156
+
+   44 concurrent_statement: atomic_end_statement ';' .
+
+    $default  reduce using rule 44 (concurrent_statement)
+
+
+state 157
+
+   86 primary_expression: "schoose" '[' expression ',' . expression ']'
+
+    "identifier"  shift, and go to state 43
+    "integer"     shift, and go to state 44
+    "*"           shift, and go to state 45
+    "schoose"     shift, and go to state 46
+    '('           shift, and go to state 47
+    '\''          shift, and go to state 48
+    '~'           shift, and go to state 49
+    '!'           shift, and go to state 50
+
+    primary_expression       go to state 51
+    unary_expression         go to state 52
+    unary_operator           go to state 53
+    equality_expression      go to state 54
+    and_expression           go to state 55
+    exclusive_or_expression  go to state 56
+    or_expression            go to state 57
+    expression               go to state 174
+
+
+state 158
+
+  105 expression: expression "?" expression ':' . or_expression
+
+    "identifier"  shift, and go to state 43
+    "integer"     shift, and go to state 44
+    "*"           shift, and go to state 45
+    "schoose"     shift, and go to state 46
+    '('           shift, and go to state 47
+    '\''          shift, and go to state 48
+    '~'           shift, and go to state 49
+    '!'           shift, and go to state 50
+
+    primary_expression       go to state 51
+    unary_expression         go to state 52
+    unary_operator           go to state 53
+    equality_expression      go to state 54
+    and_expression           go to state 55
+    exclusive_or_expression  go to state 56
+    or_expression            go to state 175
+
+
+state 159
+
+   68 call: "identifier" '(' ')' .
+
+    $default  reduce using rule 68 (call)
+
+
+state 160
+
+   67 call: "identifier" '(' expression_list . ')'
+  108 expression_list: expression_list . ',' choose_expression
+
+    ','  shift, and go to state 163
+    ')'  shift, and go to state 176
+
+
+state 161
+
+   69 selection_statement: "if" choose_expression "then" . statement_list elsif_list
+
+    "identifier"    shift, and go to state 75
+    "if"            shift, and go to state 76
+    "while"         shift, and go to state 77
+    "return"        shift, and go to state 78
+    "skip"          shift, and go to state 79
+    "goto"          shift, and go to state 80
+    "assert"        shift, and go to state 81
+    "assume"        shift, and go to state 82
+    "print"         shift, and go to state 83
+    "dead"          shift, and go to state 84
+    "start_thread"  shift, and go to state 85
+    "end_thread"    shift, and go to state 86
+    "sync"          shift, and go to state 87
+    "atomic_begin"  shift, and go to state 88
+    "atomic_end"    shift, and go to state 89
+
+    statement_list          go to state 177
+    labelled_statement      go to state 91
+    label_list              go to state 92
+    concurrent_statement    go to state 93
+    statement               go to state 94
+    dead_statement          go to state 95
+    parallel_assign         go to state 96
+    assign_id_list          go to state 97
+    asgn_id                 go to state 98
+    assert                  go to state 99
+    assume                  go to state 100
+    print                   go to state 101
+    call                    go to state 102
+    selection_statement     go to state 103
+    iteration_statement     go to state 104
+    jump_statement          go to state 105
+    start_thread_statement  go to state 106
+    end_thread_statement    go to state 107
+    sync_statement          go to state 108
+    atomic_begin_statement  go to state 109
+    atomic_end_statement    go to state 110
+
+
+state 162
+
+   73 iteration_statement: "while" expression "do" . statement_list "od"
+
+    "identifier"    shift, and go to state 75
+    "if"            shift, and go to state 76
+    "while"         shift, and go to state 77
+    "return"        shift, and go to state 78
+    "skip"          shift, and go to state 79
+    "goto"          shift, and go to state 80
+    "assert"        shift, and go to state 81
+    "assume"        shift, and go to state 82
+    "print"         shift, and go to state 83
+    "dead"          shift, and go to state 84
+    "start_thread"  shift, and go to state 85
+    "end_thread"    shift, and go to state 86
+    "sync"          shift, and go to state 87
+    "atomic_begin"  shift, and go to state 88
+    "atomic_end"    shift, and go to state 89
+
+    statement_list          go to state 178
+    labelled_statement      go to state 91
+    label_list              go to state 92
+    concurrent_statement    go to state 93
+    statement               go to state 94
+    dead_statement          go to state 95
+    parallel_assign         go to state 96
+    assign_id_list          go to state 97
+    asgn_id                 go to state 98
+    assert                  go to state 99
+    assume                  go to state 100
+    print                   go to state 101
+    call                    go to state 102
+    selection_statement     go to state 103
+    iteration_statement     go to state 104
+    jump_statement          go to state 105
+    start_thread_statement  go to state 106
+    end_thread_statement    go to state 107
+    sync_statement          go to state 108
+    atomic_begin_statement  go to state 109
+    atomic_end_statement    go to state 110
+
+
+state 163
+
+  108 expression_list: expression_list ',' . choose_expression
+
+    "identifier"  shift, and go to state 43
+    "integer"     shift, and go to state 44
+    "*"           shift, and go to state 45
+    "schoose"     shift, and go to state 46
+    '('           shift, and go to state 47
+    '\''          shift, and go to state 48
+    '~'           shift, and go to state 49
+    '!'           shift, and go to state 50
+
+    primary_expression       go to state 51
+    unary_expression         go to state 52
+    unary_operator           go to state 53
+    equality_expression      go to state 54
+    and_expression           go to state 55
+    exclusive_or_expression  go to state 56
+    or_expression            go to state 57
+    expression               go to state 123
+    choose_expression        go to state 179
+
+
+state 164
+
+   37 target_label_list: target_label_list ',' . "identifier"
+
+    "identifier"  shift, and go to state 180
+
+
+state 165
+
+   66 print: "print" '(' expression_list . ')'
+  108 expression_list: expression_list . ',' choose_expression
+
+    ','  shift, and go to state 163
+    ')'  shift, and go to state 181
+
+
+state 166
+
+   79 start_thread_statement: "start_thread" "identifier" '(' . ')'
+
+    ')'  shift, and go to state 182
+
+
+state 167
+
+   78 start_thread_statement: "start_thread" "goto" "identifier" .
+
+    $default  reduce using rule 78 (start_thread_statement)
+
+
+state 168
+
+   35 label_list: label_list "identifier" ':' .
+
+    $default  reduce using rule 35 (label_list)
+
+
+state 169
+
+   67 call: "identifier" . '(' expression_list ')'
+   68     | "identifier" . '(' ')'
+   87 primary_expression: "identifier" .
+
+    '('  shift, and go to state 121
+
+    $default  reduce using rule 87 (primary_expression)
+
+
+state 170
+
+   55 parallel_assign: assign_id_list "assignment" assign_expression_list . assign_constrain_opt
+   60 assign_expression_list: assign_expression_list . ',' choose_expression
+
+    "constrain"  shift, and go to state 183
+    ','          shift, and go to state 184
+
+    $default  reduce using rule 57 (assign_constrain_opt)
+
+    assign_constrain_opt  go to state 185
+
+
+state 171
+
+   56 parallel_assign: assign_id_list "assignment" call .
+
+    $default  reduce using rule 56 (parallel_assign)
+
+
+state 172
+
+   59 assign_expression_list: choose_expression .
+
+    $default  reduce using rule 59 (assign_expression_list)
+
+
+state 173
+
+   62 assign_id_list: assign_id_list ',' asgn_id .
+
+    $default  reduce using rule 62 (assign_id_list)
+
+
+state 174
+
+   86 primary_expression: "schoose" '[' expression ',' expression . ']'
+  105 expression: expression . "?" expression ':' or_expression
+
+    "?"  shift, and go to state 72
+    ']'  shift, and go to state 186
+
+
+state 175
+
+  102 or_expression: or_expression . "|" exclusive_or_expression
+  103              | or_expression . "implication" exclusive_or_expression
+  105 expression: expression "?" expression ':' or_expression .
+
+    "implication"  shift, and go to state 70
+    "|"            shift, and go to state 71
+
+    $default  reduce using rule 105 (expression)
+
+
+state 176
+
+   67 call: "identifier" '(' expression_list ')' .
+
+    $default  reduce using rule 67 (call)
+
+
+state 177
+
+   31 statement_list: statement_list . labelled_statement
+   32               | statement_list . ';'
+   69 selection_statement: "if" choose_expression "then" statement_list . elsif_list
+
+    "identifier"    shift, and go to state 75
+    "if"            shift, and go to state 76
+    "else"          shift, and go to state 187
+    "elsif"         shift, and go to state 188
+    "fi"            shift, and go to state 189
+    "while"         shift, and go to state 77
+    "return"        shift, and go to state 78
+    "skip"          shift, and go to state 79
+    "goto"          shift, and go to state 80
+    "assert"        shift, and go to state 81
+    "assume"        shift, and go to state 82
+    "print"         shift, and go to state 83
+    "dead"          shift, and go to state 84
+    "start_thread"  shift, and go to state 85
+    "end_thread"    shift, and go to state 86
+    "sync"          shift, and go to state 87
+    "atomic_begin"  shift, and go to state 88
+    "atomic_end"    shift, and go to state 89
+    ';'             shift, and go to state 139
+
+    labelled_statement      go to state 140
+    label_list              go to state 92
+    concurrent_statement    go to state 93
+    statement               go to state 94
+    dead_statement          go to state 95
+    parallel_assign         go to state 96
+    assign_id_list          go to state 97
+    asgn_id                 go to state 98
+    assert                  go to state 99
+    assume                  go to state 100
+    print                   go to state 101
+    call                    go to state 102
+    selection_statement     go to state 103
+    elsif_list              go to state 190
+    iteration_statement     go to state 104
+    jump_statement          go to state 105
+    start_thread_statement  go to state 106
+    end_thread_statement    go to state 107
+    sync_statement          go to state 108
+    atomic_begin_statement  go to state 109
+    atomic_end_statement    go to state 110
+
+
+state 178
+
+   31 statement_list: statement_list . labelled_statement
+   32               | statement_list . ';'
+   73 iteration_statement: "while" expression "do" statement_list . "od"
+
+    "identifier"    shift, and go to state 75
+    "if"            shift, and go to state 76
+    "while"         shift, and go to state 77
+    "od"            shift, and go to state 191
+    "return"        shift, and go to state 78
+    "skip"          shift, and go to state 79
+    "goto"          shift, and go to state 80
+    "assert"        shift, and go to state 81
+    "assume"        shift, and go to state 82
+    "print"         shift, and go to state 83
+    "dead"          shift, and go to state 84
+    "start_thread"  shift, and go to state 85
+    "end_thread"    shift, and go to state 86
+    "sync"          shift, and go to state 87
+    "atomic_begin"  shift, and go to state 88
+    "atomic_end"    shift, and go to state 89
+    ';'             shift, and go to state 139
+
+    labelled_statement      go to state 140
+    label_list              go to state 92
+    concurrent_statement    go to state 93
+    statement               go to state 94
+    dead_statement          go to state 95
+    parallel_assign         go to state 96
+    assign_id_list          go to state 97
+    asgn_id                 go to state 98
+    assert                  go to state 99
+    assume                  go to state 100
+    print                   go to state 101
+    call                    go to state 102
+    selection_statement     go to state 103
+    iteration_statement     go to state 104
+    jump_statement          go to state 105
+    start_thread_statement  go to state 106
+    end_thread_statement    go to state 107
+    sync_statement          go to state 108
+    atomic_begin_statement  go to state 109
+    atomic_end_statement    go to state 110
+
+
+state 179
+
+  108 expression_list: expression_list ',' choose_expression .
+
+    $default  reduce using rule 108 (expression_list)
+
+
+state 180
+
+   37 target_label_list: target_label_list ',' "identifier" .
+
+    $default  reduce using rule 37 (target_label_list)
+
+
+state 181
+
+   66 print: "print" '(' expression_list ')' .
+
+    $default  reduce using rule 66 (print)
+
+
+state 182
+
+   79 start_thread_statement: "start_thread" "identifier" '(' ')' .
+
+    $default  reduce using rule 79 (start_thread_statement)
+
+
+state 183
+
+   58 assign_constrain_opt: "constrain" . expression
+
+    "identifier"  shift, and go to state 43
+    "integer"     shift, and go to state 44
+    "*"           shift, and go to state 45
+    "schoose"     shift, and go to state 46
+    '('           shift, and go to state 47
+    '\''          shift, and go to state 48
+    '~'           shift, and go to state 49
+    '!'           shift, and go to state 50
+
+    primary_expression       go to state 51
+    unary_expression         go to state 52
+    unary_operator           go to state 53
+    equality_expression      go to state 54
+    and_expression           go to state 55
+    exclusive_or_expression  go to state 56
+    or_expression            go to state 57
+    expression               go to state 192
+
+
+state 184
+
+   60 assign_expression_list: assign_expression_list ',' . choose_expression
+
+    "identifier"  shift, and go to state 43
+    "integer"     shift, and go to state 44
+    "*"           shift, and go to state 45
+    "schoose"     shift, and go to state 46
+    '('           shift, and go to state 47
+    '\''          shift, and go to state 48
+    '~'           shift, and go to state 49
+    '!'           shift, and go to state 50
+
+    primary_expression       go to state 51
+    unary_expression         go to state 52
+    unary_operator           go to state 53
+    equality_expression      go to state 54
+    and_expression           go to state 55
+    exclusive_or_expression  go to state 56
+    or_expression            go to state 57
+    expression               go to state 123
+    choose_expression        go to state 193
+
+
+state 185
+
+   55 parallel_assign: assign_id_list "assignment" assign_expression_list assign_constrain_opt .
+
+    $default  reduce using rule 55 (parallel_assign)
+
+
+state 186
+
+   86 primary_expression: "schoose" '[' expression ',' expression ']' .
+
+    $default  reduce using rule 86 (primary_expression)
+
+
+state 187
+
+   71 elsif_list: "else" . statement_list "fi"
+
+    "identifier"    shift, and go to state 75
+    "if"            shift, and go to state 76
+    "while"         shift, and go to state 77
+    "return"        shift, and go to state 78
+    "skip"          shift, and go to state 79
+    "goto"          shift, and go to state 80
+    "assert"        shift, and go to state 81
+    "assume"        shift, and go to state 82
+    "print"         shift, and go to state 83
+    "dead"          shift, and go to state 84
+    "start_thread"  shift, and go to state 85
+    "end_thread"    shift, and go to state 86
+    "sync"          shift, and go to state 87
+    "atomic_begin"  shift, and go to state 88
+    "atomic_end"    shift, and go to state 89
+
+    statement_list          go to state 194
+    labelled_statement      go to state 91
+    label_list              go to state 92
+    concurrent_statement    go to state 93
+    statement               go to state 94
+    dead_statement          go to state 95
+    parallel_assign         go to state 96
+    assign_id_list          go to state 97
+    asgn_id                 go to state 98
+    assert                  go to state 99
+    assume                  go to state 100
+    print                   go to state 101
+    call                    go to state 102
+    selection_statement     go to state 103
+    iteration_statement     go to state 104
+    jump_statement          go to state 105
+    start_thread_statement  go to state 106
+    end_thread_statement    go to state 107
+    sync_statement          go to state 108
+    atomic_begin_statement  go to state 109
+    atomic_end_statement    go to state 110
+
+
+state 188
+
+   72 elsif_list: "elsif" . choose_expression "then" statement_list elsif_list
+
+    "identifier"  shift, and go to state 43
+    "integer"     shift, and go to state 44
+    "*"           shift, and go to state 45
+    "schoose"     shift, and go to state 46
+    '('           shift, and go to state 47
+    '\''          shift, and go to state 48
+    '~'           shift, and go to state 49
+    '!'           shift, and go to state 50
+
+    primary_expression       go to state 51
+    unary_expression         go to state 52
+    unary_operator           go to state 53
+    equality_expression      go to state 54
+    and_expression           go to state 55
+    exclusive_or_expression  go to state 56
+    or_expression            go to state 57
+    expression               go to state 123
+    choose_expression        go to state 195
+
+
+state 189
+
+   70 elsif_list: "fi" .
+
+    $default  reduce using rule 70 (elsif_list)
+
+
+state 190
+
+   69 selection_statement: "if" choose_expression "then" statement_list elsif_list .
+
+    $default  reduce using rule 69 (selection_statement)
+
+
+state 191
+
+   73 iteration_statement: "while" expression "do" statement_list "od" .
+
+    $default  reduce using rule 73 (iteration_statement)
+
+
+state 192
+
+   58 assign_constrain_opt: "constrain" expression .
+  105 expression: expression . "?" expression ':' or_expression
+
+    "?"  shift, and go to state 72
+
+    $default  reduce using rule 58 (assign_constrain_opt)
+
+
+state 193
+
+   60 assign_expression_list: assign_expression_list ',' choose_expression .
+
+    $default  reduce using rule 60 (assign_expression_list)
+
+
+state 194
+
+   31 statement_list: statement_list . labelled_statement
+   32               | statement_list . ';'
+   71 elsif_list: "else" statement_list . "fi"
+
+    "identifier"    shift, and go to state 75
+    "if"            shift, and go to state 76
+    "fi"            shift, and go to state 196
+    "while"         shift, and go to state 77
+    "return"        shift, and go to state 78
+    "skip"          shift, and go to state 79
+    "goto"          shift, and go to state 80
+    "assert"        shift, and go to state 81
+    "assume"        shift, and go to state 82
+    "print"         shift, and go to state 83
+    "dead"          shift, and go to state 84
+    "start_thread"  shift, and go to state 85
+    "end_thread"    shift, and go to state 86
+    "sync"          shift, and go to state 87
+    "atomic_begin"  shift, and go to state 88
+    "atomic_end"    shift, and go to state 89
+    ';'             shift, and go to state 139
+
+    labelled_statement      go to state 140
+    label_list              go to state 92
+    concurrent_statement    go to state 93
+    statement               go to state 94
+    dead_statement          go to state 95
+    parallel_assign         go to state 96
+    assign_id_list          go to state 97
+    asgn_id                 go to state 98
+    assert                  go to state 99
+    assume                  go to state 100
+    print                   go to state 101
+    call                    go to state 102
+    selection_statement     go to state 103
+    iteration_statement     go to state 104
+    jump_statement          go to state 105
+    start_thread_statement  go to state 106
+    end_thread_statement    go to state 107
+    sync_statement          go to state 108
+    atomic_begin_statement  go to state 109
+    atomic_end_statement    go to state 110
+
+
+state 195
+
+   72 elsif_list: "elsif" choose_expression . "then" statement_list elsif_list
+
+    "then"  shift, and go to state 197
+
+
+state 196
+
+   71 elsif_list: "else" statement_list "fi" .
+
+    $default  reduce using rule 71 (elsif_list)
+
+
+state 197
+
+   72 elsif_list: "elsif" choose_expression "then" . statement_list elsif_list
+
+    "identifier"    shift, and go to state 75
+    "if"            shift, and go to state 76
+    "while"         shift, and go to state 77
+    "return"        shift, and go to state 78
+    "skip"          shift, and go to state 79
+    "goto"          shift, and go to state 80
+    "assert"        shift, and go to state 81
+    "assume"        shift, and go to state 82
+    "print"         shift, and go to state 83
+    "dead"          shift, and go to state 84
+    "start_thread"  shift, and go to state 85
+    "end_thread"    shift, and go to state 86
+    "sync"          shift, and go to state 87
+    "atomic_begin"  shift, and go to state 88
+    "atomic_end"    shift, and go to state 89
+
+    statement_list          go to state 198
+    labelled_statement      go to state 91
+    label_list              go to state 92
+    concurrent_statement    go to state 93
+    statement               go to state 94
+    dead_statement          go to state 95
+    parallel_assign         go to state 96
+    assign_id_list          go to state 97
+    asgn_id                 go to state 98
+    assert                  go to state 99
+    assume                  go to state 100
+    print                   go to state 101
+    call                    go to state 102
+    selection_statement     go to state 103
+    iteration_statement     go to state 104
+    jump_statement          go to state 105
+    start_thread_statement  go to state 106
+    end_thread_statement    go to state 107
+    sync_statement          go to state 108
+    atomic_begin_statement  go to state 109
+    atomic_end_statement    go to state 110
+
+
+state 198
+
+   31 statement_list: statement_list . labelled_statement
+   32               | statement_list . ';'
+   72 elsif_list: "elsif" choose_expression "then" statement_list . elsif_list
+
+    "identifier"    shift, and go to state 75
+    "if"            shift, and go to state 76
+    "else"          shift, and go to state 187
+    "elsif"         shift, and go to state 188
+    "fi"            shift, and go to state 189
+    "while"         shift, and go to state 77
+    "return"        shift, and go to state 78
+    "skip"          shift, and go to state 79
+    "goto"          shift, and go to state 80
+    "assert"        shift, and go to state 81
+    "assume"        shift, and go to state 82
+    "print"         shift, and go to state 83
+    "dead"          shift, and go to state 84
+    "start_thread"  shift, and go to state 85
+    "end_thread"    shift, and go to state 86
+    "sync"          shift, and go to state 87
+    "atomic_begin"  shift, and go to state 88
+    "atomic_end"    shift, and go to state 89
+    ';'             shift, and go to state 139
+
+    labelled_statement      go to state 140
+    label_list              go to state 92
+    concurrent_statement    go to state 93
+    statement               go to state 94
+    dead_statement          go to state 95
+    parallel_assign         go to state 96
+    assign_id_list          go to state 97
+    asgn_id                 go to state 98
+    assert                  go to state 99
+    assume                  go to state 100
+    print                   go to state 101
+    call                    go to state 102
+    selection_statement     go to state 103
+    elsif_list              go to state 199
+    iteration_statement     go to state 104
+    jump_statement          go to state 105
+    start_thread_statement  go to state 106
+    end_thread_statement    go to state 107
+    sync_statement          go to state 108
+    atomic_begin_statement  go to state 109
+    atomic_end_statement    go to state 110
+
+
+state 199
+
+   72 elsif_list: "elsif" choose_expression "then" statement_list elsif_list .
+
+    $default  reduce using rule 72 (elsif_list)
