@@ -2,7 +2,8 @@
 
 int main() {
 
-  int x = 10;
+  int x;
+  x = 10;
 
   while(x>0)
     x=x-1;

@@ -10,6 +10,7 @@ Author: Daniel Kroening, kroening@kroening.com
 #define CPROVER_BP_PARSER_H
 
 #include <parser.h>
+#include <iostream>
 
 #include "bp_parse_tree.h"
 
@@ -22,6 +23,7 @@ public:
   
   virtual bool parse()
   {
+
     return yybpparse();
   }
   

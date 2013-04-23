@@ -260,6 +260,7 @@ int preparet::get_async_modules()
     !cmdline.isset("modelchecker") ||
     std::string(cmdline.getval("modelchecker"))=="boom";
 
+  // OSWALDO
   if(cmdline.isset("full-inlining") || boom)
   {
     status("Full inlining");

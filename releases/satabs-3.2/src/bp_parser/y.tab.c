@@ -83,11 +83,15 @@
 	extern int bpleng;
 	extern FILE *bpin;
 
+
+	extern int yylex();
+
+
 unsigned int parallel_assign__counter, assign_constrain_opt__counter, CONSTRAIN_expression__counter, function_definition__counter, labelled_statement__counter, start_thread_statement__counter, end_thread_statement__counter, sync_statement__counter, atomic_begin_statement__counter, atomic_end_statement__counter;
 
 
 /* Line 268 of yacc.c  */
-#line 91 "y.tab.c"
+#line 95 "y.tab.c"
 
 /* Enabling traces.  */
 #ifndef YYDEBUG
@@ -208,7 +212,7 @@ typedef union YYSTYPE
 {
 
 /* Line 293 of yacc.c  */
-#line 20 "bp.yy"
+#line 24 "bp.yy"
 
 	int number;
 	char *str;
@@ -217,7 +221,7 @@ typedef union YYSTYPE
 
 
 /* Line 293 of yacc.c  */
-#line 221 "y.tab.c"
+#line 225 "y.tab.c"
 } YYSTYPE;
 # define YYSTYPE_IS_TRIVIAL 1
 # define yystype YYSTYPE /* obsolescent; will be withdrawn */
@@ -229,7 +233,7 @@ typedef union YYSTYPE
 
 
 /* Line 343 of yacc.c  */
-#line 233 "y.tab.c"
+#line 237 "y.tab.c"
 
 #ifdef short
 # undef short
@@ -561,17 +565,17 @@ static const yytype_int8 yyrhs[] =
 /* YYRLINE[YYN] -- source line where rule number YYN was defined.  */
 static const yytype_uint16 yyrline[] =
 {
-       0,    88,    88,    92,    96,   103,   107,   110,   114,   120,
-     126,   130,   133,   137,   142,   150,   151,   155,   163,   170,
-     171,   172,   176,   177,   181,   186,   191,   196,   200,   207,
-     209,   216,   221,   225,   232,   236,   243,   247,   254,   258,
-     265,   266,   267,   268,   269,   270,   274,   275,   276,   277,
-     278,   279,   280,   281,   282,   286,   293,   298,   304,   310,
-     320,   324,   330,   334,   340,   346,   352,   358,   364,   368,
-     374,   380,   384,   388,   394,   400,   404,   408,   412,   418,
-     423,   430,   438,   446,   454,   465,   469,   473,   477,   481,
-     485,   492,   493,   500,   501,   504,   505,   509,   516,   517,
-     524,   525,   532,   533,   537,   544,   545,   552,   556,   560
+       0,    92,    92,    96,   100,   107,   111,   114,   118,   124,
+     130,   134,   137,   141,   146,   154,   155,   159,   167,   174,
+     175,   176,   180,   181,   185,   190,   195,   200,   204,   211,
+     213,   220,   225,   229,   236,   240,   247,   251,   258,   262,
+     269,   270,   271,   272,   273,   274,   278,   279,   280,   281,
+     282,   283,   284,   285,   286,   290,   297,   302,   308,   314,
+     324,   328,   334,   338,   344,   350,   356,   362,   368,   372,
+     378,   384,   388,   392,   398,   404,   408,   412,   416,   422,
+     427,   434,   442,   450,   458,   469,   473,   477,   481,   485,
+     489,   496,   497,   504,   505,   508,   509,   513,   520,   521,
+     528,   529,   536,   537,   541,   548,   549,   556,   560,   564
 };
 #endif
 
@@ -1668,7 +1672,7 @@ yyreduce:
         case 3:
 
 /* Line 1806 of yacc.c  */
-#line 92 "bp.yy"
+#line 96 "bp.yy"
     {
 	  }
     break;
@@ -1676,7 +1680,7 @@ yyreduce:
   case 4:
 
 /* Line 1806 of yacc.c  */
-#line 96 "bp.yy"
+#line 100 "bp.yy"
     {
 	  }
     break;
@@ -1684,7 +1688,7 @@ yyreduce:
   case 5:
 
 /* Line 1806 of yacc.c  */
-#line 104 "bp.yy"
+#line 108 "bp.yy"
     {
 	  	// ...
 	  }
@@ -1693,7 +1697,7 @@ yyreduce:
   case 7:
 
 /* Line 1806 of yacc.c  */
-#line 111 "bp.yy"
+#line 115 "bp.yy"
     {
 	  	// ...
 	  }
@@ -1702,7 +1706,7 @@ yyreduce:
   case 8:
 
 /* Line 1806 of yacc.c  */
-#line 115 "bp.yy"
+#line 119 "bp.yy"
     {
 	  	// ...
 	  }
@@ -1711,7 +1715,7 @@ yyreduce:
   case 9:
 
 /* Line 1806 of yacc.c  */
-#line 121 "bp.yy"
+#line 125 "bp.yy"
     {
 	  	// ...
 	  }
@@ -1720,7 +1724,7 @@ yyreduce:
   case 10:
 
 /* Line 1806 of yacc.c  */
-#line 127 "bp.yy"
+#line 131 "bp.yy"
     {
 	  	// ...
 	  }
@@ -1729,7 +1733,7 @@ yyreduce:
   case 12:
 
 /* Line 1806 of yacc.c  */
-#line 134 "bp.yy"
+#line 138 "bp.yy"
     {
 	  	// ...
 	  }
@@ -1738,7 +1742,7 @@ yyreduce:
   case 13:
 
 /* Line 1806 of yacc.c  */
-#line 138 "bp.yy"
+#line 142 "bp.yy"
     {
 	  	// ...
 	  }
@@ -1747,7 +1751,7 @@ yyreduce:
   case 14:
 
 /* Line 1806 of yacc.c  */
-#line 143 "bp.yy"
+#line 147 "bp.yy"
     {
 	  	// ...
 	  }
@@ -1756,7 +1760,7 @@ yyreduce:
   case 17:
 
 /* Line 1806 of yacc.c  */
-#line 156 "bp.yy"
+#line 160 "bp.yy"
     {
 	    function_definition__counter++;
 	  	// ...
@@ -1766,7 +1770,7 @@ yyreduce:
   case 18:
 
 /* Line 1806 of yacc.c  */
-#line 164 "bp.yy"
+#line 168 "bp.yy"
     {
 	  	// ...
 	  }
@@ -1775,34 +1779,25 @@ yyreduce:
   case 19:
 
 /* Line 1806 of yacc.c  */
-#line 170 "bp.yy"
+#line 174 "bp.yy"
     { (yyval.number) = 1; }
     break;
 
   case 20:
 
 /* Line 1806 of yacc.c  */
-#line 171 "bp.yy"
+#line 175 "bp.yy"
     { (yyval.number) = (yyvsp[(4) - (5)].number); }
     break;
 
   case 21:
 
 /* Line 1806 of yacc.c  */
-#line 172 "bp.yy"
+#line 176 "bp.yy"
     { (yyval.number) = 0; }
     break;
 
   case 24:
-
-/* Line 1806 of yacc.c  */
-#line 182 "bp.yy"
-    {
-	  	// ...
-	  }
-    break;
-
-  case 25:
 
 /* Line 1806 of yacc.c  */
 #line 186 "bp.yy"
@@ -1811,16 +1806,16 @@ yyreduce:
 	  }
     break;
 
-  case 26:
+  case 25:
 
 /* Line 1806 of yacc.c  */
-#line 192 "bp.yy"
+#line 190 "bp.yy"
     {
 	  	// ...
 	  }
     break;
 
-  case 27:
+  case 26:
 
 /* Line 1806 of yacc.c  */
 #line 196 "bp.yy"
@@ -1829,10 +1824,19 @@ yyreduce:
 	  }
     break;
 
+  case 27:
+
+/* Line 1806 of yacc.c  */
+#line 200 "bp.yy"
+    {
+	  	// ...
+	  }
+    break;
+
   case 28:
 
 /* Line 1806 of yacc.c  */
-#line 201 "bp.yy"
+#line 205 "bp.yy"
     {
 	  	// ...
 	  }
@@ -1841,7 +1845,7 @@ yyreduce:
   case 30:
 
 /* Line 1806 of yacc.c  */
-#line 209 "bp.yy"
+#line 213 "bp.yy"
     {
 	  	// ...
 	  }
@@ -1850,7 +1854,7 @@ yyreduce:
   case 31:
 
 /* Line 1806 of yacc.c  */
-#line 217 "bp.yy"
+#line 221 "bp.yy"
     {
         labelled_statement__counter++;
 	  	// ...
@@ -1860,7 +1864,7 @@ yyreduce:
   case 32:
 
 /* Line 1806 of yacc.c  */
-#line 222 "bp.yy"
+#line 226 "bp.yy"
     {
 	  	// ...
 	  }
@@ -1869,7 +1873,7 @@ yyreduce:
   case 33:
 
 /* Line 1806 of yacc.c  */
-#line 226 "bp.yy"
+#line 230 "bp.yy"
     {
 	  	// ...
       }
@@ -1878,7 +1882,7 @@ yyreduce:
   case 34:
 
 /* Line 1806 of yacc.c  */
-#line 233 "bp.yy"
+#line 237 "bp.yy"
     {
 	  	// ...
 	  }
@@ -1887,7 +1891,7 @@ yyreduce:
   case 35:
 
 /* Line 1806 of yacc.c  */
-#line 237 "bp.yy"
+#line 241 "bp.yy"
     {
 	  	// ...
 	  }
@@ -1896,7 +1900,7 @@ yyreduce:
   case 36:
 
 /* Line 1806 of yacc.c  */
-#line 244 "bp.yy"
+#line 248 "bp.yy"
     {
 	  		// ...
 		  }
@@ -1905,7 +1909,7 @@ yyreduce:
   case 37:
 
 /* Line 1806 of yacc.c  */
-#line 248 "bp.yy"
+#line 252 "bp.yy"
     {
 	  		// ...
 		  }
@@ -1914,7 +1918,7 @@ yyreduce:
   case 38:
 
 /* Line 1806 of yacc.c  */
-#line 255 "bp.yy"
+#line 259 "bp.yy"
     {
 		  	// ...
 		  }
@@ -1923,7 +1927,7 @@ yyreduce:
   case 39:
 
 /* Line 1806 of yacc.c  */
-#line 259 "bp.yy"
+#line 263 "bp.yy"
     {
 		  	// ...
 		  }
@@ -1932,7 +1936,7 @@ yyreduce:
   case 55:
 
 /* Line 1806 of yacc.c  */
-#line 287 "bp.yy"
+#line 291 "bp.yy"
     {
 	  	// ...
       }
@@ -1941,7 +1945,7 @@ yyreduce:
   case 56:
 
 /* Line 1806 of yacc.c  */
-#line 294 "bp.yy"
+#line 298 "bp.yy"
     {
 	    parallel_assign__counter++;
 	  	// ...
@@ -1951,7 +1955,7 @@ yyreduce:
   case 57:
 
 /* Line 1806 of yacc.c  */
-#line 299 "bp.yy"
+#line 303 "bp.yy"
     { 
 	  	// ...
 	  }
@@ -1960,7 +1964,7 @@ yyreduce:
   case 58:
 
 /* Line 1806 of yacc.c  */
-#line 304 "bp.yy"
+#line 308 "bp.yy"
     {
 	  assign_constrain_opt__counter++;
 #ifdef HUUUU
@@ -1972,7 +1976,7 @@ yyreduce:
   case 59:
 
 /* Line 1806 of yacc.c  */
-#line 311 "bp.yy"
+#line 315 "bp.yy"
     {
 	    CONSTRAIN_expression__counter++;
 #ifdef HUUUU
@@ -1984,7 +1988,7 @@ yyreduce:
   case 60:
 
 /* Line 1806 of yacc.c  */
-#line 321 "bp.yy"
+#line 325 "bp.yy"
     {
 	  	// ...
 	  }
@@ -1993,7 +1997,7 @@ yyreduce:
   case 61:
 
 /* Line 1806 of yacc.c  */
-#line 325 "bp.yy"
+#line 329 "bp.yy"
     {
 	  	// ...
 	  }
@@ -2002,7 +2006,7 @@ yyreduce:
   case 62:
 
 /* Line 1806 of yacc.c  */
-#line 331 "bp.yy"
+#line 335 "bp.yy"
     {
 	  	// ...
 	  }
@@ -2011,7 +2015,7 @@ yyreduce:
   case 63:
 
 /* Line 1806 of yacc.c  */
-#line 335 "bp.yy"
+#line 339 "bp.yy"
     {
 	  	// ...
 	  }
@@ -2020,7 +2024,7 @@ yyreduce:
   case 64:
 
 /* Line 1806 of yacc.c  */
-#line 341 "bp.yy"
+#line 345 "bp.yy"
     {
 	  	// ...
 	  }
@@ -2029,7 +2033,7 @@ yyreduce:
   case 65:
 
 /* Line 1806 of yacc.c  */
-#line 347 "bp.yy"
+#line 351 "bp.yy"
     {
 	  	// ...
 	  }
@@ -2038,7 +2042,7 @@ yyreduce:
   case 66:
 
 /* Line 1806 of yacc.c  */
-#line 353 "bp.yy"
+#line 357 "bp.yy"
     {
 	  	// ...
 	  }
@@ -2047,7 +2051,7 @@ yyreduce:
   case 67:
 
 /* Line 1806 of yacc.c  */
-#line 359 "bp.yy"
+#line 363 "bp.yy"
     {
 	  	// ...
 	  }
@@ -2056,7 +2060,7 @@ yyreduce:
   case 68:
 
 /* Line 1806 of yacc.c  */
-#line 365 "bp.yy"
+#line 369 "bp.yy"
     {
 	  	// ...
 	  }
@@ -2065,7 +2069,7 @@ yyreduce:
   case 69:
 
 /* Line 1806 of yacc.c  */
-#line 369 "bp.yy"
+#line 373 "bp.yy"
     {
 	  	// ...
 	  }
@@ -2074,7 +2078,7 @@ yyreduce:
   case 70:
 
 /* Line 1806 of yacc.c  */
-#line 375 "bp.yy"
+#line 379 "bp.yy"
     {
 	  	// ...
 	  }
@@ -2083,7 +2087,7 @@ yyreduce:
   case 71:
 
 /* Line 1806 of yacc.c  */
-#line 381 "bp.yy"
+#line 385 "bp.yy"
     {	
 	  	// ...
 	  }
@@ -2092,7 +2096,7 @@ yyreduce:
   case 72:
 
 /* Line 1806 of yacc.c  */
-#line 385 "bp.yy"
+#line 389 "bp.yy"
     {	
 	  	// ...
 	  }
@@ -2101,7 +2105,7 @@ yyreduce:
   case 73:
 
 /* Line 1806 of yacc.c  */
-#line 389 "bp.yy"
+#line 393 "bp.yy"
     {	
 	  	// ...
 	  }
@@ -2110,7 +2114,7 @@ yyreduce:
   case 74:
 
 /* Line 1806 of yacc.c  */
-#line 395 "bp.yy"
+#line 399 "bp.yy"
     {
 	  	// ...
 	  }
@@ -2119,7 +2123,7 @@ yyreduce:
   case 75:
 
 /* Line 1806 of yacc.c  */
-#line 401 "bp.yy"
+#line 405 "bp.yy"
     {
 	  	// ...
 	  }
@@ -2128,7 +2132,7 @@ yyreduce:
   case 76:
 
 /* Line 1806 of yacc.c  */
-#line 405 "bp.yy"
+#line 409 "bp.yy"
     {
 	  	// ...
 	  }
@@ -2137,7 +2141,7 @@ yyreduce:
   case 77:
 
 /* Line 1806 of yacc.c  */
-#line 409 "bp.yy"
+#line 413 "bp.yy"
     {
 	  	// ...
 	  }
@@ -2146,7 +2150,7 @@ yyreduce:
   case 78:
 
 /* Line 1806 of yacc.c  */
-#line 413 "bp.yy"
+#line 417 "bp.yy"
     {
 	  	// ...
 	  }
@@ -2155,7 +2159,7 @@ yyreduce:
   case 79:
 
 /* Line 1806 of yacc.c  */
-#line 419 "bp.yy"
+#line 423 "bp.yy"
     {
         start_thread_statement__counter++;
 	  	// ...
@@ -2165,7 +2169,7 @@ yyreduce:
   case 80:
 
 /* Line 1806 of yacc.c  */
-#line 424 "bp.yy"
+#line 428 "bp.yy"
     {
 	  	// ...
       }
@@ -2174,7 +2178,7 @@ yyreduce:
   case 81:
 
 /* Line 1806 of yacc.c  */
-#line 431 "bp.yy"
+#line 435 "bp.yy"
     {
         end_thread_statement__counter++;
 	  	// ...
@@ -2184,7 +2188,7 @@ yyreduce:
   case 82:
 
 /* Line 1806 of yacc.c  */
-#line 439 "bp.yy"
+#line 443 "bp.yy"
     {
         sync_statement__counter++;
 	  	// not generated by SATABS - just ignore
@@ -2194,7 +2198,7 @@ yyreduce:
   case 83:
 
 /* Line 1806 of yacc.c  */
-#line 447 "bp.yy"
+#line 451 "bp.yy"
     {
         atomic_begin_statement__counter++;
 	  	// ...
@@ -2204,7 +2208,7 @@ yyreduce:
   case 84:
 
 /* Line 1806 of yacc.c  */
-#line 455 "bp.yy"
+#line 459 "bp.yy"
     {
         atomic_end_statement__counter++;
 	  	// ...
@@ -2214,7 +2218,7 @@ yyreduce:
   case 85:
 
 /* Line 1806 of yacc.c  */
-#line 466 "bp.yy"
+#line 470 "bp.yy"
     {
 	  	// ...
   	  }
@@ -2223,7 +2227,7 @@ yyreduce:
   case 86:
 
 /* Line 1806 of yacc.c  */
-#line 470 "bp.yy"
+#line 474 "bp.yy"
     {
 	  	// ...
       }
@@ -2232,7 +2236,7 @@ yyreduce:
   case 87:
 
 /* Line 1806 of yacc.c  */
-#line 474 "bp.yy"
+#line 478 "bp.yy"
     {
 	  	// ...
 	  }
@@ -2241,7 +2245,7 @@ yyreduce:
   case 88:
 
 /* Line 1806 of yacc.c  */
-#line 478 "bp.yy"
+#line 482 "bp.yy"
     { 
 	  	// ...
 	  }
@@ -2250,7 +2254,7 @@ yyreduce:
   case 89:
 
 /* Line 1806 of yacc.c  */
-#line 482 "bp.yy"
+#line 486 "bp.yy"
     {
 	  	// ...
 	  }
@@ -2259,7 +2263,7 @@ yyreduce:
   case 90:
 
 /* Line 1806 of yacc.c  */
-#line 486 "bp.yy"
+#line 490 "bp.yy"
     { 
 	  	// ...
 	  }
@@ -2268,7 +2272,7 @@ yyreduce:
   case 92:
 
 /* Line 1806 of yacc.c  */
-#line 494 "bp.yy"
+#line 498 "bp.yy"
     { 
 	  	// ...
 	  }
@@ -2277,7 +2281,7 @@ yyreduce:
   case 96:
 
 /* Line 1806 of yacc.c  */
-#line 506 "bp.yy"
+#line 510 "bp.yy"
     { 
 	  	// ...
 	  }
@@ -2286,7 +2290,7 @@ yyreduce:
   case 97:
 
 /* Line 1806 of yacc.c  */
-#line 510 "bp.yy"
+#line 514 "bp.yy"
     { 
 	  	// ...
 	  }
@@ -2295,7 +2299,7 @@ yyreduce:
   case 99:
 
 /* Line 1806 of yacc.c  */
-#line 518 "bp.yy"
+#line 522 "bp.yy"
     { 
 	  	// ...
 	  }
@@ -2304,7 +2308,7 @@ yyreduce:
   case 101:
 
 /* Line 1806 of yacc.c  */
-#line 526 "bp.yy"
+#line 530 "bp.yy"
     { 
 	  	// ...
 	  }
@@ -2313,7 +2317,7 @@ yyreduce:
   case 103:
 
 /* Line 1806 of yacc.c  */
-#line 534 "bp.yy"
+#line 538 "bp.yy"
     { 
 	  	// ...
 	  }
@@ -2322,7 +2326,7 @@ yyreduce:
   case 104:
 
 /* Line 1806 of yacc.c  */
-#line 538 "bp.yy"
+#line 542 "bp.yy"
     { 
 	  	// ...
 	  }
@@ -2331,7 +2335,7 @@ yyreduce:
   case 106:
 
 /* Line 1806 of yacc.c  */
-#line 546 "bp.yy"
+#line 550 "bp.yy"
     { 
 	  	// ...
 	  }
@@ -2340,7 +2344,7 @@ yyreduce:
   case 108:
 
 /* Line 1806 of yacc.c  */
-#line 557 "bp.yy"
+#line 561 "bp.yy"
     { 
 	  	// ...
 	  }
@@ -2349,7 +2353,7 @@ yyreduce:
   case 109:
 
 /* Line 1806 of yacc.c  */
-#line 561 "bp.yy"
+#line 565 "bp.yy"
     { 
 	  	// ...
 	  }
@@ -2358,7 +2362,7 @@ yyreduce:
 
 
 /* Line 1806 of yacc.c  */
-#line 2362 "y.tab.c"
+#line 2366 "y.tab.c"
       default: break;
     }
   /* User semantic actions sometimes alter yychar, and that requires
@@ -2589,7 +2593,7 @@ yyreturn:
 
 
 /* Line 2067 of yacc.c  */
-#line 566 "bp.yy"
+#line 570 "bp.yy"
 
 
 

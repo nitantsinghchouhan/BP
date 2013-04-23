@@ -1,0 +1,293 @@
+// OSWALDO
+
+
+
+#include <stdio.h> 
+#include <stdlib.h>
+#include <iostream>
+
+#include "bp_parser.h"
+
+#include <fstream>
+
+/*
+#include <expr_util.h>
+#include <std_code.h>
+#include <std_types.h>
+#include <std_expr.h>
+*/
+#include "bp_language.h"
+//#include "bp_typecheck.h"
+
+#include "expr2bp.h"
+
+#include "bp_typecheck.h"
+
+#include "bp_parse_tree.h"
+
+/*
+extern FILE *yyin;
+extern FILE **yyout;
+extern int yyparse(void);
+*/
+
+using namespace std;
+
+extern bool bp_parsert::parse(void);
+
+// last statment index w.r.t. vector of statements , corresponding
+// to an assertion statement.
+int last_statement_index;
+
+
+
+// Substitutes variables in the LHS by expressions in the RHS in the formula
+exprt substitute(exprt formula,vector<exprt> lhs,vector<exprt> rhs,bool substitute_primed) {
+  
+  if((substitute_primed && (formula.id()==ID_next_symbol))
+     || (!substitute_primed && (formula.id()==ID_symbol))) {
+
+    // If it's a variable, try to substitute.
+    int i;
+    for(i=0;i<lhs.size();++i) {
+      if(lhs[i].get(ID_identifier) == formula.get(ID_identifier))
+	return rhs[i];
+    }
+  }
+  else {
+    int i;
+    for(i=0;i<formula.operands().size();++i)
+      formula.operands()[i]=substitute(formula.operands()[i],lhs,rhs,
+				       substitute_primed);
+
+    return formula;
+  }
+
+}
+
+// TODO: Make recursive
+exprt process_assignment(exprt statement,
+			vector<exprt> *weakest_preconditions
+			) {
+
+    // TODO: Check that it has only two operands.
+    exprt lhs = statement.op0();
+    exprt rhs = statement.op1();
+
+    int i;
+    vector<int> star_indices;
+   
+    exprt post_condition = (*weakest_preconditions).back();
+
+    vector<exprt> variables;
+    vector<exprt> expressions;
+
+    // Detecting star symbols.
+    for(i=0;i<rhs.operands().size();++i) {
+      // Check that they're of the same size.
+      
+      variables.push_back(lhs.operands()[i]);
+      expressions.push_back(rhs.operands()[i]);
+    }
+
+    for(i=0; i<rhs.operands().size();i++) {
+      if(rhs.operands()[i].id()==ID_nondet_bool) {
+        statement.op1()[i].make_false();
+        wpf = process_assignment(statement, *weakest_preconditions)
+        expressionsf[i].make_false();
+        expressionst[i].make_true();
+	 
+
+}
+
+void process_helper_assignment(exprt statement,
+			vector<exprt> *weakest_preconditions) {
+
+  // TODO: Check that it has only two operands.
+  exprt lhs = statement.op0();
+  exprt rhs = statement.op1();
+
+  exprt post_condition = (*weakest_preconditions).back();
+
+  vector<exprt> variables;
+  vector<exprt> expressions;
+
+  int i;
+  for(i=0;i<lhs.operands().size();++i) {
+    // Check that they're of the same size.
+    variables.push_back(lhs.operands()[i]);
+    expressions.push_back(rhs.operands()[i]);
+  }
+  
+  bool substitute_primed = false;
+  exprt wp = substitute(post_condition,variables,expressions,
+			substitute_primed);
+  (*weakest_preconditions).push_back(wp);
+
+}
+
+
+void process_constrain(exprt statement,
+			vector<exprt> *weakest_preconditions) {
+
+  // TODO: Check that it has only two operands.
+  exprt assignment = statement.op0();
+  exprt constrain = statement.op1();
+
+  exprt post_condition = (*weakest_preconditions).back();
+
+  vector<exprt> variables;
+  vector<exprt> expressions;
+
+  vector<exprt> primed_variables;
+
+  int i;
+  for(i=0;i<assignment.op0().operands().size();++i) {
+    // Check that they're of the same size.
+    variables.push_back(assignment.op0().operands()[i]);
+    expressions.push_back(assignment.op1().operands()[i]);
+
+    // Creating all the primed variables to substitute in constrain
+    /*
+    exprt primed_variable = variables[i];
+    primed_variable.set(ID_identifier,
+			"\'"+primed_variable.get(ID_identifier));
+    primed_variables.push_back(primed_variable);
+    */
+  }
+
+  bool substitute_primed = true;
+  exprt constrain_sub = substitute(constrain,variables,expressions,substitute_primed);
+
+  exprt wp = substitute(post_condition,variables,expressions,
+			!substitute_primed);
+
+
+  // (G ==> wp) /\ (!G ==> post)
+
+  exprt limplies_expr(ID_implies, typet(ID_bool));
+  limplies_expr.move_to_operands(constrain_sub,wp);
+
+  exprt ror_expr(ID_or, typet(ID_bool));
+  ror_expr.move_to_operands(constrain_sub,post_condition);
+
+  exprt and_expr(ID_and, typet(ID_bool));
+  and_expr.move_to_operands(limplies_expr,ror_expr);
+
+  
+  (*weakest_preconditions).push_back(and_expr);
+
+}
+
+
+void process_labelled_statement(exprt statement);
+void process_declaration_statement(exprt statement);
+void process_while_statement(exprt statement);
+void process_ifthenelse_statement(exprt statement);
+
+
+// Process each of the statements obtained from the parse tree expressions.
+void process_statements(vector<exprt> statements,
+			vector<exprt> *weakest_preconditions) {
+
+  int i;
+  // TODO: Identify assertion and stop.
+  for(i=statements.size()-1;0<=i;--i) {
+
+    // TODO: Verify this
+    // Can we do a switch ??
+    // Include the rest of statements.
+    if(statements[i].id()=="assign")
+      process_assignment(statements[i],weakest_preconditions);
+    else if(statements[i].id()=="bp_constrain")
+      process_constrain(statements[i],weakest_preconditions);
+
+    /*
+    else if(statements[i].id()=="label")
+      process_labelled_statement(statements[i]);
+    else if(statements[i].id()=="decl")
+      process_declaration_statement(statements[i]);
+    else if(statements[i].id()=="while")
+      process_while_statement(statements[i]);
+    else if(statements[i].id()=="ifthenelse")
+      process_ifthenelse_statement(statements[i]);
+    */
+
+  }
+
+}
+
+// Process each of the expressions obtained by the parser tree.
+void process_expressions(list<exprt> parser_expr_list) {
+
+
+  int i;
+  vector<exprt> statements,weakest_preconditions;
+
+
+  vector<exprt> expr_vector(parser_expr_list.begin(),parser_expr_list.end());
+
+
+  for(i=0;i<expr_vector.size();++i) {
+    // TODO: Gather other types of statements
+    if(expr_vector[i].id()=="assign")
+      statements.push_back(expr_vector[i]);
+
+    if(expr_vector[i].id()=="function_call" &&
+       (ID_assert==expr_vector[i].get(ID_identifier))) {
+       
+    //    if(expr_vector[i].id()=="function_call" 
+    //   && bp_typecheckt::to_string(expr_vector[i].op1())=="assert" ) {
+      
+      last_statement_index=i;
+      weakest_preconditions.push_back(expr_vector[i]);
+      break;
+    }
+      
+  }
+    
+  process_statements(statements,&weakest_preconditions);
+
+}
+
+
+
+int main() {
+
+
+  cout<<"Hello World!"<<endl;
+
+  bp_languaget bpl;
+  ifstream mf;
+
+  //  ifstream.open(bpl.parse(&mf,"../../../../examples/handmade/hello.structured.bp",NULL);
+
+	    
+
+  /*
+  bp_parsert bpp;
+   bpp.clear();
+
+  bpp.filename="../../../../examples/handmade/hello.structured.bp";
+  bpp.in=(std::cin);
+  bool result=bpp.parse();
+  */
+
+  
+  bp_parser.clear();
+
+  bp_parser.filename="../../../../examples/handmade/hello.structured.bp";
+  bp_parser.in=(std::cin);
+  
+  //  bp_parser.set_message_handler(NULL);
+
+  bool result=bp_parser.parse();
+  
+  std::list<exprt> parser_expr_list = bp_parser.parse_tree.declarations;
+
+  process_expressions(parser_expr_list);
+
+  cout<<"Hello World 2!"<<endl;
+  cout<<"Hello World 3!"<<endl;
+
+}

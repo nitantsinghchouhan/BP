@@ -14,6 +14,10 @@
 	extern int bpleng;
 	extern FILE *bpin;
 
+
+	extern int yylex();
+
+
 unsigned int parallel_assign__counter, assign_constrain_opt__counter, CONSTRAIN_expression__counter, function_definition__counter, labelled_statement__counter, start_thread_statement__counter, end_thread_statement__counter, sync_statement__counter, atomic_begin_statement__counter, atomic_end_statement__counter;
 %}
 

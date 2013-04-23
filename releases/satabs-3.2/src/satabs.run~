@@ -1,0 +1,2 @@
+export PATH=$PATH:/home/oswaldo/program_repair/BP/releases/satabs-3.2/src/boom1.8/boom
+./satabs/satabs --save-bps ../../../examples/handmade/hello1.c  

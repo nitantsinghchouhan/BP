@@ -12,6 +12,17 @@ YACC = yacc -d
 
 CC = cc
 
+
+# Compiler for program repair
+CPP = g++
+
+all: calc bp_repair
+
+bp_repair: 
+	     $(CPP) -o bp_repair bp_repair.cpp
+
+
+
 # calc is the final object that we will generate, it is produced by
 # the C compiler from the y.tab.o and from the lex.yy.o
 
@@ -43,5 +54,5 @@ lex.yy.c: bp.ll
 ## from scratch
 
 clean:
-	-rm -f *.o lex.yy.c *.tab.*  bp *.output
+	-rm -f *.o lex.yy.c *.tab.*  bp *.output bp_repair
 

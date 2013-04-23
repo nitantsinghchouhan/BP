@@ -1,0 +1,5 @@
+#g++ -Wall -static -I. -I/home/oswaldo/cbmc/cbmc-4.3/src/goto-programs -I/home/oswaldo/cbmc/cbmc-4.3/src/ansi-c -I/home/oswaldo/program_repair/BP/releases/satabs-3.2/src -I/home/oswaldo/cbmc/cbmc-4.3/src -I/home/oswaldo/cbmc/cbmc-4.3/src/util -L. bp_repair.cpp ~/cbmc/cbmc-4.3/src/util/util.a ~/cbmc/cbmc-4.3/src/big-int/bigint.o -lbplang
+
+g++ -Wno-deprecated -fpermissive -Wall -static -I. -I/home/oswaldo/cbmc/cbmc-4.3/src/util bp_repair.cpp ./bplang.a -I/home/oswaldo/cbmc/cbmc-4.3/src/goto-programs -I/home/oswaldo/cbmc/cbmc-4.3/src/ansi-c  ~/cbmc/cbmc-4.3/src/util/util.a ~/cbmc/cbmc-4.3/src/big-int/bigint.o 
+
+#g++ -fpermissive -Wall -static -I. bp_repair.cpp ./bplang.a -I/home/oswaldo/cbmc/cbmc-4.3/src/goto-programs -I/home/oswaldo/cbmc/cbmc-4.3/src/ansi-c  ~/cbmc/cbmc-4.3/src/util/util.a ~/cbmc/cbmc-4.3/src/big-int/bigint.o 

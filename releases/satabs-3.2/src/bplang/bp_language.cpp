@@ -95,7 +95,6 @@ bool bp_languaget::parse(
   bp_parser.set_message_handler(message_handler);
 
   bool result=bp_parser.parse();
-
   bp_parse_tree.swap(bp_parser.parse_tree);
 
   // save some memory

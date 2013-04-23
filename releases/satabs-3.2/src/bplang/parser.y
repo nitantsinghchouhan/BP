@@ -1,4 +1,8 @@
 %{
+
+
+#include <iostream>
+
 #include <i2string.h>
 
 #include "bp_parser.h"
@@ -22,6 +26,10 @@ int yybperror(const std::string &error);
 int yylex();
 extern char *yytext;
 
+// OSWALDO
+ extern int yyparse();
+
+
 /*------------------------------------------------------------------------*/
 
 #define mto(x, y) stack(x).move_to_operands(stack(y))
@@ -42,6 +50,8 @@ Function: init
 
 static void init(exprt &expr)
 {
+
+  
   expr.clear();
 
   locationt &location=expr.location();
@@ -538,6 +548,14 @@ int yybperror(const std::string &error)
   PARSER.parse_error(error, yytext);
   return 0;
 }
+
+/*
+int main() {
+
+  yyparse();
+
+}
+*/
 
 #undef yyerror
 

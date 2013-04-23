@@ -1,9 +1,10 @@
 include ../config.inc
 include ../common
 
+
 SRC = bp_language.cpp bp_parser.cpp bp_typecheck.cpp expr2bp.cpp \
       y.tab.cpp lex.yy.cpp bp_parse_tree.cpp bp_typecheck_code.cpp \
-      bp_typecheck_expr.cpp bp_util.cpp
+      bp_typecheck_expr.cpp bp_util.cpp 
 
 INCLUDES= -I $(CBMC)/src -I $(CBMC)/src/util
 
@@ -14,9 +15,23 @@ CLEANFILES = bplang$(LIBEXT) \
 	y.tab.h y.tab.cpp lex.yy.cpp \
 	y.tab.cpp.output y.output
 
-all: bplang$(LIBEXT)
+all: bplang$(LIBEXT) 
+
+
 
 ###############################################################################
+
+#CPP = g++
+
+#bplang_parse: y.tab.o lex.yy.o
+#	$(CPP) -o bplang_parse y.tab.o lex.yy.o -ll -lm 
+
+
+#lex.yy.o: lex.yy.cpp y.tab.h
+
+#y.tab.o: y.tab.cpp y.tab.h
+
+
 
 bplang$(LIBEXT): $(OBJ)
 	$(LINKLIB)

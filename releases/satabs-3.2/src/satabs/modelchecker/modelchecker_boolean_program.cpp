@@ -1099,10 +1099,18 @@ bool modelchecker_boolean_programt::check(
 
         // boom has a default of 2, which we override
         // with a more reasonable number
-        if(max_threads!=0)
-          command+=" --threadbound "+i2string(max_threads);
+
+	// OSWALDO
+        //max_threads = 1;   
+        if(max_threads!=0) {
+	  command+=" --threadbound "+i2string(max_threads);
+	}
         else
           command+=" --threadbound 5";
+
+	// OSWALDO
+	//command+=" --algo=sumqbf";
+	//command+=" --universal-summaries";
         break;
 
       case BEBOP:
